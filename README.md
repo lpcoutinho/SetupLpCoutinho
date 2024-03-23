@@ -35,4 +35,4 @@ bash <(curl -sSL setup.oriondesign.art.br)
   🔸 Traefik 🔸 Portainer 🔸 Chatwoot 🔸 Evolution API 🔸 MinIO 🔸 Typebot 🔸 N8N 🔸 Flowise 🔸 PgAdmin 4 🔸 Nocobase 🔸 Botpress 🔸 Wordpress 🔸 Baserow 🔸 MongoDB 🔸 RabbitMQ 🔸 Uptime Kuma 🔸 Calcom 🔸 Mautic 🔸 Appsmith 🔸 Qdrant 🔸 Woofed CRM 🔸 Formbricks 🔸 NocoDB 🔸 Langfuse 🔸 Metabase 🔸 Odoo 🔸 Uno API 🔸 Quepasa API 🔸 Docuseal 🔸 Grafana 🔸 Prometheus 🔸 cAdvisor 🔸 Dify AI 🔸
 </p>
 
-forked from  <a href="https://chat.whatsapp.com/Cb3Kw0YlCHIJJqS84eC6ie">oriondesign2015/SetupOrion</a>
+forked from  <a href="https://github.com/oriondesign2015/SetupOrion">oriondesign2015/SetupOrion</a>
