@@ -2,11 +2,11 @@
 <p align="center">
   Este Auto instalador é uma solução <b>100% gratuita</b>, com o intuido de ajudar toda a comunidade a instalar as principais ferramentas do mercado de Automações/Marketing em seu servidor.
   <b>Você não precisa instalar todos os programas contidos no mesmo, pois você poderá escolher qual das ferramentas você quer instalar.</b>
-  Desenvolvido por <b>OrionDesign</b>. Ao utilizar o mesmo, <b>de os créditos</b>!
+  Desenvolvido por <b>LpCoutinho</b>. Ao utilizar o mesmo, <b>de os créditos</b>!
 </p>
 
 <p align="center">
-  <a href="https://chat.whatsapp.com/Cb3Kw0YlCHIJJqS84eC6ie"><img src="https://img.shields.io/badge/Comunidade_no_Whatsapp-4EA94B?style=for-the-badge&labelColor=black&logo=whatsapp&logoColor=4EA94B" alt="Comunidade no Whatsapp"></a>    
+  <a href="https://wha.me/5521964781930"><img src="https://img.shields.io/badge/Comunidade_no_Whatsapp-4EA94B?style=for-the-badge&labelColor=black&logo=whatsapp&logoColor=4EA94B" alt="Comunidade no Whatsapp"></a>    
   <a href="https://youtube.com/oriondesign_oficial"><img src="https://img.shields.io/badge/Playlist_do_Setup_Orion-FF0000?style=for-the-badge&labelColor=ffffff&logo=youtube&logoColor=FF0000" alt="Inscreva-se no meu canal"></a>
 </p>
 
@@ -34,3 +34,5 @@ bash <(curl -sSL setup.oriondesign.art.br)
 <p align="center">
   🔸 Traefik 🔸 Portainer 🔸 Chatwoot 🔸 Evolution API 🔸 MinIO 🔸 Typebot 🔸 N8N 🔸 Flowise 🔸 PgAdmin 4 🔸 Nocobase 🔸 Botpress 🔸 Wordpress 🔸 Baserow 🔸 MongoDB 🔸 RabbitMQ 🔸 Uptime Kuma 🔸 Calcom 🔸 Mautic 🔸 Appsmith 🔸 Qdrant 🔸 Woofed CRM 🔸 Formbricks 🔸 NocoDB 🔸 Langfuse 🔸 Metabase 🔸 Odoo 🔸 Uno API 🔸 Quepasa API 🔸 Docuseal 🔸 Grafana 🔸 Prometheus 🔸 cAdvisor 🔸 Dify AI 🔸
 </p>
+
+forked from  <a href="https://chat.whatsapp.com/Cb3Kw0YlCHIJJqS84eC6ie">oriondesign2015/SetupOrion</a>
