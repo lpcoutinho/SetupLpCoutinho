@@ -24,26 +24,26 @@ sudo apt-get install -y dialog
 sudo apt update
 sudo apt upgrade -y
 
-# Verifica se o arquivo SetupOrion já existe
-if [ -e "SetupOrion" ]; then
-    echo "O arquivo SetupOrion já existe. Removendo..."
-    rm SetupOrion
+# Verifica se o arquivo SetupLpCoutinho já existe
+if [ -e "SetupLpCoutinho" ]; then
+    echo "O arquivo SetupLpCoutinho já existe. Removendo..."
+    rm SetupLpCoutinho
 fi
 
 # Baixa o script
-curl -sSL https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/SetupOrion -o SetupOrion
+curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/Setup -o SetupLpCoutinho
 
 # Verifica se o download foi bem-sucedido
 if [ $? -eq 0 ]; then
     # Executa o script baixado
-    chmod +x SetupOrion
-    ./SetupOrion
+    chmod +x SetupLpCoutinho
+    ./SetupLpCoutinho
 else
-    echo "Falha ao baixar o script SetupOrion"
+    echo "Falha ao baixar o script SetupLpCoutinho"
 fi
 
 sudo apt update
 sudo apt upgrade -y
 
 clear
-rm SetupOrion
+rm SetupLpCoutinho
