@@ -1,4 +1,4 @@
-<img src="https://github.com/lpcoutinho/SetupLpCoutinho/blob/main/.assets/logo.png" alt="SetupLpCoutinho">
+<img src="https://github.com/lpcoutinho/SetupLpCoutinho/blob/main/.assets/logo.jpg" alt="SetupLpCoutinho">
 <p align="center">
   Este Auto instalador é uma solução <b>100% gratuita</b>, com o intuido de ajudar toda a comunidade a instalar as principais ferramentas do mercado de Automações/Marketing em seu servidor.
   <b>Você não precisa instalar todos os programas contidos no mesmo, pois você poderá escolher qual das ferramentas você quer instalar.</b>
