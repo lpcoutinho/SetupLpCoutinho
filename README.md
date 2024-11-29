@@ -41,4 +41,4 @@ bash <(curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/ma
   🔸 Traefik 🔸 Portainer 🔸 Chatwoot 🔸 Evolution API 🔸 MinIO 🔸 Typebot 🔸 N8N 🔸 Flowise 🔸 PgAdmin 4 🔸 Nocobase 🔸 Botpress 🔸 Wordpress 🔸 Baserow 🔸 MongoDB 🔸 RabbitMQ 🔸 Uptime Kuma 🔸 Calcom 🔸 Mautic 🔸 Appsmith 🔸 Qdrant 🔸 Woofed CRM 🔸 Formbricks 🔸 NocoDB 🔸 Langfuse 🔸 Metabase 🔸 Odoo 🔸 Uno API 🔸 Quepasa API 🔸 Docuseal 🔸 Grafana 🔸 Prometheus 🔸 cAdvisor 🔸 Dify AI 🔸
 </p>
 
-<p align="right">forked from  <a href="https://github.com/lpcoutinho/SetupLpCoutinho">lpcoutinho2015/SetupOrion</a></p>
+<p align="right">forked from  <a href="https://github.com/lpcoutinho/SetupLpCoutinho">lpcoutinho/SetupLpCoutinho</a></p>

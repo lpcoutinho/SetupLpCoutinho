@@ -137,7 +137,7 @@ creditos_msg() {
 preencha_as_info() {
     echo -e "$amarelo===================================================================================================\e[0m"
     echo -e "$amarelo=                                                                                                 $amarelo=\e[0m"
-    echo -e "$amarelo=                          $branco Preencha as informações solicitadas abaixo                     $amarelo=\e[0m"
+    echo -e "$amarelo=                          $branco Preencha as informações solicitadas abaixo                           $amarelo=\e[0m"
     echo -e "$amarelo=                                                                                                 $amarelo=\e[0m"
     echo -e "$amarelo===================================================================================================\e[0m"
     echo ""
