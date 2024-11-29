@@ -6,7 +6,6 @@
 
 versao() {
 echo -e "                                   \e[97mVersão do SetupLpCoutinho: \e[32mv. 2.6.0\e[0m                                  "
-echo -e "\e[32moriondesign.art.br/whatsapp1      \e[97m<----- Grupos no WhatsApp ----->     \e[32moriondesign.art.br/whatsapp2\e[0m"
 }
 
 
@@ -1792,7 +1791,7 @@ criar_arquivo() {
     nome_credenciais
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
     #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-    read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+    read -p "Digite a Url do Portainer (ex: portainer.lpcoutinho.com.br): " PORTAINER_URL
     echo ""
 
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1820,7 +1819,7 @@ verificar_campos() {
         nome_credenciais
         echo -e "\e[97mPasso$amarelo 1/3\e[0m"
         #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-        read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+        read -p "Digite a Url do Portainer (ex: portainer.lpcoutinho.com.br): " PORTAINER_URL
         echo ""
     
         echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1840,7 +1839,7 @@ verificar_campos() {
         nome_credenciais
         echo -e "\e[97mPasso$amarelo 1/3\e[0m"
         #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-        read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+        read -p "Digite a Url do Portainer (ex: portainer.lpcoutinho.com.br): " PORTAINER_URL
         echo ""
     
         echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1909,7 +1908,7 @@ verificar_token() {
                 nome_credenciais
                 echo -e "\e[97mPasso$amarelo 1/3\e[0m"
                 #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-                read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+                read -p "Digite a Url do Portainer (ex: portainer.lpcoutinho.com.br): " PORTAINER_URL
                 echo ""
             
                 echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -2555,7 +2554,7 @@ echo ""
 
 echo -e "\e[97mPasso$amarelo 2/5\e[0m"
 echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-echo -en "\e[33mDigite o usuário de Email (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_teste
+echo -en "\e[33mDigite o usuário de Email (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_teste
 echo ""
 
 echo -e "\e[97mPasso$amarelo 3/5\e[0m"
@@ -2610,7 +2609,7 @@ sudo apt-get update > /dev/null 2>&1
 sudo apt-get install swaks -y > /dev/null 2>&1
 
 msg="Se você está lendo isso, o seu SMTP está funcionando =D.
-By: OrionDesign"
+By: LpCoutinho"
 
 if swaks --to "$email_teste" --from "$email_teste" --server "$host_teste" --port "$porta_teste" --auth LOGIN --auth-user "$user_teste" --auth-password "$senha_teste" --tls --body "$msg"; then
     sleep 2
@@ -2671,19 +2670,19 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Portainer (ex: portainer.oriondesign.art.br): \e[0m" && read -r url_portainer
+    echo -en "\e[33mDigite o Dominio para o Portainer (ex: portainer.lpcoutinho.com.br): \e[0m" && read -r url_portainer
     echo ""
 
     ## Pergunta o Nome do Servidor
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
     echo -e "$amarelo--> Não pode conter Espaços e/ou cartacteres especiais"
-    echo -en "\e[33mEscolha um nome para o seu servidor (ex: OrionDesign): \e[0m" && read -r nome_servidor
+    echo -en "\e[33mEscolha um nome para o seu servidor (ex: LpCoutinho): \e[0m" && read -r nome_servidor
     echo ""
     
     ## Pergunta o nome da Rede Interna
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
     echo -e "$amarelo--> Não pode conter Espaços e/ou cartacteres especiais."
-    echo -en "\e[33mDigite um nome para sua rede interna (ex: OrionNet): \e[0m" && read -r nome_rede_interna
+    echo -en "\e[33mDigite um nome para sua rede interna (ex: LpCoutinhoNet): \e[0m" && read -r nome_rede_interna
     echo ""
     
     ## Pergunta o Email para informações sobre o certificado
@@ -2776,7 +2775,7 @@ cat > dados_vps << EOL
 [DADOS DA VPS]
 
 Estes dados foram preenchidos na hora que você foi instalar o Traefik e Portainer e
-serão utilizados para realizar as instalações no do SetupOrion v.2
+serão utilizados para realizar as instalações no do SetupLpCoutinho v.2
 
 Nome do Servidor: $nome_servidor
 
@@ -2956,7 +2955,7 @@ cat > traefik.yaml << EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   traefik:
     image: traefik:v2.11.2
@@ -3010,7 +3009,7 @@ services:
         - "traefik.http.routers.http-catchall.middlewares=redirect-https@docker"
         - "traefik.http.routers.http-catchall.priority=1"
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   vol_shared:
@@ -3071,7 +3070,7 @@ cat > portainer.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   agent:
     image: portainer/agent:latest ## Versão Agent do Portainer
@@ -3088,7 +3087,7 @@ services:
       placement:
         constraints: [node.platform.os == linux]
 
-## --------------------------- ORION --------------------------- ##
+
 
   portainer:
     image: portainer/portainer-ce:latest ## Versão do Portainer
@@ -3116,7 +3115,7 @@ services:
         - "traefik.http.routers.portainer.entrypoints=websecure"
         - "traefik.http.routers.portainer.priority=1"
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   portainer_data:
@@ -3225,7 +3224,7 @@ cat > postgres.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   postgres:
     image: postgres:14 ## Versão do postgres
@@ -3256,7 +3255,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   postgres_data:
@@ -3351,7 +3350,7 @@ cat > postgres${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   postgres${1:+_$1}:
     image: postgres:14 ## Versão do postgres
@@ -3382,7 +3381,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   postgres${1:+_$1}_data:
@@ -3484,7 +3483,7 @@ cat > pgvector.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   pgvector:
     image: pgvector/pgvector:pg16 ## Versão do PgVector
@@ -3517,7 +3516,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   pgvector:
@@ -3612,7 +3611,7 @@ cat > pgvector${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   pgvector${1:+_$1}:
     image: pgvector/pgvector:pg16 ## Versão do PgVector
@@ -3645,7 +3644,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   pgvector${1:+_$1}:
@@ -3746,7 +3745,7 @@ cat > redis.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   redis:
     image: redis:latest  ## Versão do Redis
@@ -3777,7 +3776,7 @@ services:
           cpus: "1"
           memory: 2048M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   redis_data:
@@ -3868,7 +3867,7 @@ cat > redis${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   redis${1:+_$1}:
     image: redis:latest  ## Versão do Redis
@@ -3899,7 +3898,7 @@ services:
           cpus: "1"
           memory: 2048M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   redis${1:+_$1}_data:
@@ -4005,7 +4004,7 @@ cat > mysql.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   mysql:
     image: percona/percona-server:8.0 ## Versão do MySQL
@@ -4044,7 +4043,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   mysql_data:
@@ -4141,7 +4140,7 @@ cat > mysql${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   mysql${1:+_$1}:
     image: percona/percona-server:8.0 ## Versão do MySQL
@@ -4180,7 +4179,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   mysql${1:+_$1}_data:
@@ -4283,7 +4282,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.lpcoutinho.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -4300,7 +4299,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_chatwoot
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_chatwoot
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -4461,7 +4460,7 @@ cat > chatwoot${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   chatwoot${1:+_$1}_app:
     image: chatwoot/chatwoot:latest ## Versão do Chatwoot
@@ -4568,7 +4567,7 @@ services:
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
         - traefik.http.routers.chatwoot${1:+_$1}_app.middlewares=sslheader@docker
 
-## --------------------------- ORION --------------------------- ##
+
 
   chatwoot${1:+_$1}_sidekiq:
     image: chatwoot/chatwoot:latest ## Versão do Chatwoot
@@ -4663,7 +4662,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   chatwoot${1:+_$1}_storage:
@@ -4842,7 +4841,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.oriondesign.art.br): \e[0m" && read -r url_evolution
+    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.lpcoutinho.com.br): \e[0m" && read -r url_evolution
     echo ""
 
     ## Limpa o terminal
@@ -4953,7 +4952,7 @@ cat > evolution${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   evolution${1:+_$1}:
     image: atendai/evolution-api:latest ## Versão da Evolution API
@@ -4976,7 +4975,7 @@ services:
       ## Configuração do Cliente
       ## Pegue a versão em: https://wppconnect.io/pt-BR/whatsapp-versions/
       - CONFIG_SESSION_PHONE_VERSION=2.3000.1015901307
-      - CONFIG_SESSION_PHONE_CLIENT=OrionDesign
+      - CONFIG_SESSION_PHONE_CLIENT=LpCoutinho
       - CONFIG_SESSION_PHONE_NAME=Chrome
       
       ## Configuração do Banco de Dados
@@ -5132,7 +5131,7 @@ services:
       - traefik.http.services.evolution${1:+_$1}.loadbalancer.server.port=8080
       - traefik.http.services.evolution${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   evolution${1:+_$1}_instances:
@@ -5243,7 +5242,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.oriondesign.art.br): \e[0m" && read -r url_evolution
+    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.lpcoutinho.com.br): \e[0m" && read -r url_evolution
     echo ""
 
     ## Limpa o terminal
@@ -5325,16 +5324,16 @@ cat > evolution_v1${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
 
-  evolution_oriondesign${1:+_$1}:
+
+  evolution_lpcoutinho${1:+_$1}:
     image: atendai/evolution-api:v1.8.2 ## Versão da Evolution API
     command: ["node", "./dist/src/main.js"]
 
     volumes:
-    - evolution_oriondesign${1:+_$1}_instances:/evolution/instances
-    - evolution_oriondesign${1:+_$1}_store:/evolution/store
-    - evolution_oriondesign${1:+_$1}_views:/evolution/views
+    - evolution_lpcoutinho${1:+_$1}_instances:/evolution/instances
+    - evolution_lpcoutinho${1:+_$1}_store:/evolution/store
+    - evolution_lpcoutinho${1:+_$1}_views:/evolution/views
 
     networks:
       - $nome_rede_interna ## Nome da rede interna
@@ -5349,7 +5348,7 @@ services:
     - AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
 
     ## Configurações
-    - CONFIG_SESSION_PHONE_CLIENT=OrionDesign ## Nome que aparece no celular
+    - CONFIG_SESSION_PHONE_CLIENT=LpCoutinho ## Nome que aparece no celular
     - CONFIG_SESSION_PHONE_NAME=chrome
 
     ## Definir versão do Whatsapp Web
@@ -5447,26 +5446,26 @@ services:
         - node.role == manager
       labels:
       - traefik.enable=1
-      - traefik.http.routers.evolution_oriondesign${1:+_$1}.rule=Host(\`$url_evolution\`) ## Url da Evolution API
-      - traefik.http.routers.evolution_oriondesign${1:+_$1}.entrypoints=websecure
-      - traefik.http.routers.evolution_oriondesign${1:+_$1}.priority=1
-      - traefik.http.routers.evolution_oriondesign${1:+_$1}.tls.certresolver=letsencryptresolver
-      - traefik.http.routers.evolution_oriondesign${1:+_$1}.service=evolution_oriondesign${1:+_$1}
-      - traefik.http.services.evolution_oriondesign${1:+_$1}.loadbalancer.server.port=8080
-      - traefik.http.services.evolution_oriondesign${1:+_$1}.loadbalancer.passHostHeader=1
+      - traefik.http.routers.evolution_lpcoutinho${1:+_$1}.rule=Host(\`$url_evolution\`) ## Url da Evolution API
+      - traefik.http.routers.evolution_lpcoutinho${1:+_$1}.entrypoints=websecure
+      - traefik.http.routers.evolution_lpcoutinho${1:+_$1}.priority=1
+      - traefik.http.routers.evolution_lpcoutinho${1:+_$1}.tls.certresolver=letsencryptresolver
+      - traefik.http.routers.evolution_lpcoutinho${1:+_$1}.service=evolution_lpcoutinho${1:+_$1}
+      - traefik.http.services.evolution_lpcoutinho${1:+_$1}.loadbalancer.server.port=8080
+      - traefik.http.services.evolution_lpcoutinho${1:+_$1}.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
-  evolution_oriondesign${1:+_$1}_instances:
+  evolution_lpcoutinho${1:+_$1}_instances:
     external: true
-    name: evolution_oriondesign${1:+_$1}_instances
-  evolution_oriondesign${1:+_$1}_store:
+    name: evolution_lpcoutinho${1:+_$1}_instances
+  evolution_lpcoutinho${1:+_$1}_store:
     external: true
-    name: evolution_oriondesign${1:+_$1}_store
-  evolution_oriondesign${1:+_$1}_views:
+    name: evolution_lpcoutinho${1:+_$1}_store
+  evolution_lpcoutinho${1:+_$1}_views:
     external: true
-    name: evolution_oriondesign${1:+_$1}_views
+    name: evolution_lpcoutinho${1:+_$1}_views
 networks:
   $nome_rede_interna: ## Nome da rede interna
     name: $nome_rede_interna ## Nome da rede interna
@@ -5571,7 +5570,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.oriondesign.art.br): \e[0m" && read -r url_evolution
+    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.lpcoutinho.com.br): \e[0m" && read -r url_evolution
     echo ""
 
     ## Limpa o terminal
@@ -5682,7 +5681,7 @@ cat > evolution_v2${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   evolution${1:+_$1}:
     image: atendai/evolution-api:v2.1.2 ## Versão da Evolution API
@@ -5705,7 +5704,7 @@ services:
       ## Configuração do Cliente
       ## Pegue a versão em: https://wppconnect.io/pt-BR/whatsapp-versions/
       - CONFIG_SESSION_PHONE_VERSION=2.3000.1015901307
-      - CONFIG_SESSION_PHONE_CLIENT=OrionDesign
+      - CONFIG_SESSION_PHONE_CLIENT=LpCoutinho
       - CONFIG_SESSION_PHONE_NAME=Chrome
       
       ## Configuração do Banco de Dados
@@ -5861,7 +5860,7 @@ services:
       - traefik.http.services.evolution_v2${1:+_$1}.loadbalancer.server.port=8080
       - traefik.http.services.evolution_v2${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   evolution${1:+_$1}_instances:
@@ -5971,18 +5970,18 @@ while true; do
     
     ##Pergunta o Dominio do Minio
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o MinIO (ex: minio.oriondesign.art.br): \e[0m" && read -r url_minio
+    echo -en "\e[33mDigite o Dominio para o MinIO (ex: minio.lpcoutinho.com.br): \e[0m" && read -r url_minio
     echo ""
     
     ##Pergunta o Dominio para o S3 do Minio
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Minio S3 (ex: s3.oriondesign.art.br): \e[0m" && read -r url_s3
+    echo -en "\e[33mDigite o Dominio para o Minio S3 (ex: s3.lpcoutinho.com.br): \e[0m" && read -r url_s3
     echo ""
     
     ##Pergunta o Usuario para o Minio
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: \!#$ e/ou espaço"
-    echo -en "\e[33mDigite um usuario para o MinIO (ex: OrionDesign): \e[0m" && read -r user_minio
+    echo -en "\e[33mDigite um usuario para o MinIO (ex: LpCoutinho): \e[0m" && read -r user_minio
     echo ""
     
     ##Pergunta a Senha para o Minio
@@ -6067,7 +6066,7 @@ cat > minio${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   minio${1:+_$1}:
     image: quay.io/minio/minio:latest ## Versão do Minio
@@ -6109,7 +6108,7 @@ services:
         - traefik.http.services.minio_console${1:+_$1}.loadbalancer.passHostHeader=true
         - traefik.http.routers.minio_console${1:+_$1}.service=minio_console${1:+_$1}
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   minio${1:+_$1}_data:
@@ -6225,12 +6224,12 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Builder do Typebot (ex: typebot.oriondesign.art.br): \e[0m" && read -r url_typebot
+    echo -en "\e[33mDigite o Dominio para o Builder do Typebot (ex: typebot.lpcoutinho.com.br): \e[0m" && read -r url_typebot
     echo ""
 
     ##Pergunta o Dominio do Viewer
     echo -e "\e[97mPasso$amarelo 2/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Viewer do Typebot (ex: bot.oriondesign.art.br): \e[0m" && read -r url_viewer
+    echo -en "\e[33mDigite o Dominio para o Viewer do Typebot (ex: bot.lpcoutinho.com.br): \e[0m" && read -r url_viewer
     echo ""
 
     ##Pergunta a versão da ferramenta
@@ -6246,7 +6245,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 5/10\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_typebot
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_typebot
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -6434,7 +6433,7 @@ cat > typebot${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   typebot${1:+_$1}_builder:
     image: baptistearno/typebot-builder:$versao_typebot ## Versão do Builder do Typebot
@@ -6503,7 +6502,7 @@ services:
         - traefik.http.services.typebot${1:+_$1}_builder.loadbalancer.passHostHeader=true
         - traefik.http.routers.typebot${1:+_$1}_builder.service=typebot${1:+_$1}_builder
 
-## --------------------------- ORION --------------------------- ##
+
 
   typebot${1:+_$1}_viewer:
     image: baptistearno/typebot-viewer:$versao_typebot ## Versão do Viewer do Typebot
@@ -6572,7 +6571,7 @@ services:
         - traefik.http.services.typebot${1:+_$1}_viewer.loadbalancer.passHostHeader=true
         - traefik.http.routers.typebot${1:+_$1}_viewer.service=typebot${1:+_$1}_viewer
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -6675,12 +6674,12 @@ while true; do
 
     ##Pergunta o Dominio do N8N
     echo -e "\e[97mPasso$amarelo 1/7\e[0m"
-    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.oriondesign.art.br): \e[0m" && read -r url_editorn8n
+    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.lpcoutinho.com.br): \e[0m" && read -r url_editorn8n
     echo ""
     
     ##Pergunta o Dominio do Webhook
     echo -e "\e[97mPasso$amarelo 2/7\e[0m"
-    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.oriondesign.art.br): \e[0m" && read -r url_webhookn8n
+    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.lpcoutinho.com.br): \e[0m" && read -r url_webhookn8n
     echo ""
 
     ##Pergunta o Email SMTP
@@ -6691,7 +6690,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 4/7\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_n8n
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_n8n
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -6844,7 +6843,7 @@ cat > n8n${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n${1:+_$1}_editor:
     image: n8nio/n8n:latest ## Versão do N8N
@@ -6922,7 +6921,7 @@ services:
         - traefik.http.services.n8n${1:+_$1}_editor.loadbalancer.server.port=5678
         - traefik.http.services.n8n${1:+_$1}_editor.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n${1:+_$1}_webhook:
     image: n8nio/n8n:latest ## Versão do N8N
@@ -7000,7 +6999,7 @@ services:
         - traefik.http.services.n8n${1:+_$1}_webhook.loadbalancer.server.port=5678
         - traefik.http.services.n8n${1:+_$1}_webhook.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n${1:+_$1}_worker:
     image: n8nio/n8n:latest ## Versão do N8N
@@ -7069,7 +7068,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -7177,7 +7176,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Flowise (ex: flowise.oriondesign.art.br): \e[0m" && read -r url_flowise
+    echo -en "\e[33mDigite o dominio para o Flowise (ex: flowise.lpcoutinho.com.br): \e[0m" && read -r url_flowise
     echo ""
     
     ##Pergunta o Usuario para a ferramenta
@@ -7285,7 +7284,7 @@ cat > flowise${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   flowise${1:+_$1}:
     image: flowiseai/flowise:latest ## Versão do Flowise
@@ -7334,7 +7333,7 @@ services:
         - traefik.http.routers.flowise${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.flowise${1:+_$1}.tls.certresolver=letsencryptresolver
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   flowise${1:+_$1}_data:
@@ -7437,7 +7436,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o PgAdmin 4 (ex: pgadmin.oriondesign.art.br): \e[0m" && read -r url_PgAdmin_4
+    echo -en "\e[33mDigite o dominio para o PgAdmin 4 (ex: pgadmin.lpcoutinho.com.br): \e[0m" && read -r url_PgAdmin_4
     echo ""
     
     ##Pergunta o Email para a ferramenta
@@ -7523,7 +7522,7 @@ cat > pgadmin${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:  
 
-## --------------------------- ORION --------------------------- ##
+
 
   pgadmin${1:+_$1}:
     image: dpage/pgadmin4:latest ## Versão do PgAdmin 4
@@ -7558,7 +7557,7 @@ services:
           - traefik.http.routers.pgadmin${1:+_$1}.entrypoints=websecure
           - traefik.http.routers.pgadmin${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   pgadmin${1:+_$1}_data:
@@ -7663,7 +7662,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o dominio para o Nocobase (ex: nocobase.oriondesign.art.br): \e[0m" && read -r url_nocobase
+    echo -en "\e[33mDigite o dominio para o Nocobase (ex: nocobase.lpcoutinho.com.br): \e[0m" && read -r url_nocobase
     echo ""
     
     ##Pergunta o Email para a ferramenta
@@ -7673,7 +7672,7 @@ while true; do
     
     ##Pergunta um Usuario para a ferramenta
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
-    echo -en "\e[33mDigite um nome de usuario para o Nocobase (ex: OrionDesign): \e[0m" && read -r user_nocobase
+    echo -en "\e[33mDigite um nome de usuario para o Nocobase (ex: LpCoutinho): \e[0m" && read -r user_nocobase
     echo ""
     
     ##Pergunta a Senha para a ferramenta
@@ -7782,7 +7781,7 @@ cat > nocobase${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   nocobase${1:+_$1}:
     image: nocobase/nocobase:latest ## Versão do Nocobase
@@ -7834,7 +7833,7 @@ services:
         - traefik.http.routers.nocobase${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.nocobase${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   nocobase${1:+_$1}_storage:
@@ -7941,7 +7940,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Botpress (ex: botpress.oriondesign.art.br): \e[0m" && read -r url_botpress
+    echo -en "\e[33mDigite o dominio para o Botpress (ex: botpress.lpcoutinho.com.br): \e[0m" && read -r url_botpress
     echo ""
     
     ## Limpa o terminal
@@ -8041,7 +8040,7 @@ cat > botpress${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   botpress${1:+_$1}:
     image: botpress/server:latest
@@ -8084,7 +8083,7 @@ services:
         - traefik.http.routers.botpress${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.botpress${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   botpress${1:+_$1}_data:
@@ -8193,13 +8192,13 @@ while true; do
 
     ## Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Wordpress (ex: oriondesign.art.br ou loja.oriondesign.art.br): \e[0m" && read -r url_wordpress
+    echo -en "\e[33mDigite o dominio para o Wordpress (ex: lpcoutinho.com.br ou loja.lpcoutinho.com.br): \e[0m" && read -r url_wordpress
     echo ""
     
     ## Pergunta o nome do site
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
     echo -e "$amarelo--> Use apenas letras minusculas, sem espaço ou caracteres especiais"
-    echo -en "\e[33mDigite o nome do Site (ex: lojaorion): \e[0m" && read -r nome_site_wordpress
+    echo -en "\e[33mDigite o nome do Site (ex: lojalpcoutinho): \e[0m" && read -r nome_site_wordpress
     echo ""  
 
     ## Limpa o terminal
@@ -8306,7 +8305,7 @@ cat > wordpress_$nome_site_wordpress.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   wordpress_$nome_site_wordpress:
     image: wordpress:latest ## Versão do Wordpress
@@ -8352,7 +8351,7 @@ services:
         - traefik.http.services.wordpress_$nome_site_wordpress.loadbalancer.server.port=80
         - traefik.http.services.wordpress_$nome_site_wordpress.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   wordpress_$nome_site_wordpress:
@@ -8528,7 +8527,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o Baserow (ex: baserow.oriondesign.art.br): \e[0m" && read -r url_baserow
+    echo -en "\e[33mDigite o dominio para o Baserow (ex: baserow.lpcoutinho.com.br): \e[0m" && read -r url_baserow
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -8538,7 +8537,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_baserow
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_baserow
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -8686,7 +8685,7 @@ cat > baserow${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   baserow${1:+_$1}:
     image: baserow/baserow:latest ## Versão do Baserow
@@ -8738,7 +8737,7 @@ services:
         - traefik.http.routers.baserow${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.baserow${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   baserow${1:+_$1}_data:
@@ -8843,7 +8842,7 @@ while true; do
     ## Pergunta o nome de usuario
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o nome de usuario (ex: oriondesign): \e[0m" && read -r user_mongo
+    echo -en "\e[33mDigite o nome de usuario (ex: lpcoutinho): \e[0m" && read -r user_mongo
     echo ""
     
     ## Gera a senha aleatória
@@ -8916,7 +8915,7 @@ cat > mongodb${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   mongodb${1:+_$1}:
     image: mongo:latest
@@ -8950,7 +8949,7 @@ services:
           cpus: '1'
           memory: 2048M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   mongodb${1:+_$1}_data:
@@ -9066,12 +9065,12 @@ while true; do
 
     ## Pergunta o Dominio do RabbitMq
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o RabbitMQ (ex: rabbitmq.oriondesign.art.br): \e[0m" && read -r url_rabbitmq
+    echo -en "\e[33mDigite o dominio para o RabbitMQ (ex: rabbitmq.lpcoutinho.com.br): \e[0m" && read -r url_rabbitmq
     echo ""
     
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o nome de usuario (ex: OrionDesign): \e[0m" && read -r user_rabbitmq
+    echo -en "\e[33mDigite o nome de usuario (ex: LpCoutinho): \e[0m" && read -r user_rabbitmq
     echo ""
     
     ## Gera a senha aleatória
@@ -9148,7 +9147,7 @@ cat > rabbitmq${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   rabbitmq${1:+_$1}:
     image: rabbitmq:management
@@ -9190,7 +9189,7 @@ services:
         - traefik.http.routers.rabbitmq${1:+_$1}.service=rabbitmq${1:+_$1}
         - traefik.http.services.rabbitmq${1:+_$1}.loadbalancer.server.port=15672
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   rabbitmq${1:+_$1}_data:
@@ -9301,7 +9300,7 @@ while true; do
 
     ## Pergunta o Dominio do uptime kuma
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Uptime Kuma (ex: uptimekuma.oriondesign.art.br): \e[0m" && read -r url_uptimekuma
+    echo -en "\e[33mDigite o dominio para o Uptime Kuma (ex: uptimekuma.lpcoutinho.com.br): \e[0m" && read -r url_uptimekuma
     echo ""
     
     ## Limpa o terminal
@@ -9365,7 +9364,7 @@ cat > uptimekuma${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   uptimekuma${1:+_$1}:
     image: louislam/uptime-kuma:latest
@@ -9394,7 +9393,7 @@ services:
         - traefik.http.services.uptimekuma${1:+_$1}.loadBalancer.server.port=3001
         - traefik.http.routers.uptimekuma${1:+_$1}.service=uptimekuma${1:+_$1}
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   uptimekuma${1:+_$1}:
@@ -9504,7 +9503,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o Cal (ex: calcom.oriondesign.art.br): \e[0m" && read -r url_calcom
+    echo -en "\e[33mDigite o dominio para o Cal (ex: calcom.lpcoutinho.com.br): \e[0m" && read -r url_calcom
     echo ""
     
     ## Pergunta o email SMTP
@@ -9515,7 +9514,7 @@ while true; do
     ## Pergunta o Ususario SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuario para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_calcom
+    echo -en "\e[33mDigite o Usuario para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_calcom
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -9637,7 +9636,7 @@ cat > calcom${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   calcom${1:+_$1}_app:
     image: calcom/cal.com:v4.6.14
@@ -9712,7 +9711,7 @@ services:
       - traefik.http.services.calcom${1:+_$1}_app.loadbalancer.server.port=3000
       - traefik.http.services.calcom${1:+_$1}_app.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna:
@@ -9815,13 +9814,13 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Mautic (ex: mautic.oriondesign.art.br): \e[0m" && read -r url_mautic
+    echo -en "\e[33mDigite o Dominio para o Mautic (ex: mautic.lpcoutinho.com.br): \e[0m" && read -r url_mautic
     echo ""
 
     ## Pergunta o usuario da ferramenta
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
     echo -e "$amarelo--> Sem caracteres especiais: \!#$ e/ou espaços"
-    echo -en "\e[33mDigite um usuario (ex: OrionDesign): \e[0m" && read -r user_mautic
+    echo -en "\e[33mDigite um usuario (ex: LpCoutinho): \e[0m" && read -r user_mautic
     echo ""
 
     ## Pergunta o email da ferramenta
@@ -9930,7 +9929,7 @@ cat > mautic${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   mautic_web${1:+_$1}:
     image: mautic/mautic:latest ## Versão do Mautic
@@ -9985,7 +9984,7 @@ services:
         - traefik.http.routers.mautic${1:+_$1}.tls.certresolver=letsencryptresolver
         - traefik.http.services.mautic${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   mautic_worker${1:+_$1}:
     image: mautic/mautic:latest ## Versão do Mautic
@@ -10032,7 +10031,7 @@ services:
           cpus: "2"
           memory: 2048M
 
-## --------------------------- ORION --------------------------- ##
+
 
   mautic_cron${1:+_$1}:
     image: mautic/mautic:latest ## Versão do Mautic
@@ -10079,7 +10078,7 @@ services:
           cpus: "0.5"
           memory: 512M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   mautic${1:+_$1}_config:
@@ -10209,7 +10208,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Appsmith (ex: appsmith.oriondesign.art.br): \e[0m" && read -r url_appsmith
+    echo -en "\e[33mDigite o dominio para o Appsmith (ex: appsmith.lpcoutinho.com.br): \e[0m" && read -r url_appsmith
     echo ""
     
     ## Limpa o terminal
@@ -10276,7 +10275,7 @@ cat > appsmith${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   appsmith${1:+_$1}:
     image: appsmith/appsmith-ee:latest
@@ -10313,7 +10312,7 @@ services:
         - traefik.http.services.appsmith${1:+_$1}.loadbalancer.server.port=80
         - traefik.http.services.appsmith${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   appsmith${1:+_$1}_data:
@@ -10422,7 +10421,7 @@ while true; do
     ## Pergunta o Dominio da ferramenta
     read -r ip _ <<<$(hostname -I)
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o ip da vps (seu ip: $ip) ou dominio para Qdrant (ex: qdrant.oriondesign.art.br): \e[0m" && read -r ip_vps
+    echo -en "\e[33mDigite o ip da vps (seu ip: $ip) ou dominio para Qdrant (ex: qdrant.lpcoutinho.com.br): \e[0m" && read -r ip_vps
     echo ""
     
     ## Pergunta quandos nodes deseja
@@ -10502,7 +10501,7 @@ for ((i=0; i< $nodes_qdrant; i++)); do
 
   cat <<EOL >> qdrant.yaml
 
-  ## --------------------------- ORION --------------------------- ##
+  
 
   $node_name:
     image: qdrant/qdrant:latest ## Versão do Qdrant
@@ -10540,7 +10539,7 @@ EOL
 done
 
 cat <<EOL >> qdrant.yaml
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
 EOL
@@ -10650,13 +10649,13 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o Dominio para o WoofedCRM (ex: woofedcrm.oriondesign.art.br): \e[0m" && read -r url_woofed
+    echo -en "\e[33mDigite o Dominio para o WoofedCRM (ex: woofedcrm.lpcoutinho.com.br): \e[0m" && read -r url_woofed
     echo ""
 
     ## Pergunta o nome do Usuario do Motor
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o User do MOTOR (ex: oriondesign): \e[0m" && read -r email_admin_woofed
+    echo -en "\e[33mDigite o User do MOTOR (ex: lpcoutinho): \e[0m" && read -r email_admin_woofed
     echo ""
 
     ## Pergunta o nome do Senha do Motor
@@ -10781,7 +10780,7 @@ cat > woofedcrm${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   woofedcrm${1:+_$1}_web:
     image: douglara/woofedcrm:latest
@@ -10855,7 +10854,7 @@ services:
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
         - traefik.http.routers.woofedcrm${1:+_$1}.middlewares=sslheader@docker
 
-## --------------------------- ORION --------------------------- ##
+
 
   woofedcrm${1:+_$1}_sidekiq:
     image: douglara/woofedcrm:latest
@@ -10918,7 +10917,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   woofedcrm${1:+_$1}_job:
     image: douglara/woofedcrm:latest
@@ -10981,7 +10980,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   woofedcrm${1:+_$1}_data:
@@ -11153,7 +11152,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Formbricks (ex: formbricks.oriondesign.art.br): \e[0m" && read -r url_formbricks
+    echo -en "\e[33mDigite o Dominio para o Formbricks (ex: formbricks.lpcoutinho.com.br): \e[0m" && read -r url_formbricks
     echo ""
     
     ## Pergunta o Email SMTP
@@ -11164,7 +11163,7 @@ while true; do
     ## Pergunta o User SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuario do SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_formbricks
+    echo -en "\e[33mDigite o Usuario do SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_formbricks
     echo ""
     
     ## Pergunta a Senha SMTP
@@ -11296,7 +11295,7 @@ cat > formbricks${1:+_$1}.yaml <<-EOF
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   formbricks${1:+_$1}:
     image: formbricks/formbricks:latest
@@ -11316,7 +11315,7 @@ services:
       - DATABASE_URL=postgresql://postgres:$senha_pgvector@pgvector:5432/formbricks${1:+_$1}?schema=public
 
       ## Licença Enterprise ou Self-hosting
-      ## Solicitar licenta Self-hosting --> https://oriondesign.art.br/formbricks_licence/ <-- ##
+      ## Solicitar licenta Self-hosting --> https://lpcoutinho.com.br/formbricks_licence/ <-- ##
       - ENTERPRISE_LICENSE_KEY=
 
       ## Keys aleatórias 32 caracteres
@@ -11389,7 +11388,7 @@ services:
         - traefik.http.routers.formbricks${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.formbricks${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   formbricks${1:+_$1}_data:
@@ -11496,7 +11495,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o NocoDB (ex: nocodb.oriondesign.art.br): \e[0m" && read -r url_nocodb
+    echo -en "\e[33mDigite o dominio para o NocoDB (ex: nocodb.lpcoutinho.com.br): \e[0m" && read -r url_nocodb
     echo ""
     
     ## Limpa o terminal
@@ -11582,7 +11581,7 @@ cat > nocodb${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   nocodb${1:+_$1}: 
     image: nocodb/nocodb:latest
@@ -11622,7 +11621,7 @@ services:
         - traefik.http.routers.nocodb${1:+_$1}.tls.certresolver=letsencryptresolver
         - com.centurylinklabs.watchtower.enable=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   nocodb${1:+_$1}_data:
@@ -11730,7 +11729,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Langfuse (ex: langfuse.oriondesign.art.br): \e[0m" && read -r url_langfuse
+    echo -en "\e[33mDigite o dominio para o Langfuse (ex: langfuse.lpcoutinho.com.br): \e[0m" && read -r url_langfuse
     echo ""
     
     ## Limpa o terminal
@@ -11825,7 +11824,7 @@ cat > langfuse${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   langfuse${1:+_$1}:
     image: langfuse/langfuse:latest
@@ -11876,7 +11875,7 @@ services:
         - traefik.http.services.langfuse${1:+_$1}.loadbalancer.passHostHeader=true
         - traefik.http.services.langfuse${1:+_$1}.loadbalancer.server.port=3000
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna:
@@ -11979,7 +11978,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Metabase (ex: metabase.oriondesign.art.br): \e[0m" && read -r url_metabase
+    echo -en "\e[33mDigite o dominio para o Metabase (ex: metabase.lpcoutinho.com.br): \e[0m" && read -r url_metabase
     echo ""
     
     ## Limpa o terminal
@@ -12070,7 +12069,7 @@ cat > metabase${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   metabase${1:+_$1}:
     image: metabase/metabase:latest
@@ -12113,7 +12112,7 @@ services:
         - traefik.http.routers.metabase${1:+_$1}.tls=true
         - traefik.http.routers.metabase${1:+_$1}.tls.certresolver=letsencryptresolver
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   metabase${1:+_$1}_data:
@@ -12221,7 +12220,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Odoo (ex: odoo.oriondesign.art.br): \e[0m" && read -r url_odoo
+    echo -en "\e[33mDigite o dominio para o Odoo (ex: odoo.lpcoutinho.com.br): \e[0m" && read -r url_odoo
     echo ""
     
     ## Limpa o terminal
@@ -12290,7 +12289,7 @@ cat > odoo${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   odoo${1:+_$1}_app:
     image: odoo:18.0
@@ -12322,7 +12321,7 @@ services:
         - traefik.http.routers.odoo${1:+_$1}_app.tls.certresolver=letsencryptresolver
         - traefik.http.services.odoo${1:+_$1}_app.loadbalancer.server.port=8069
 
-## --------------------------- ORION --------------------------- ##
+
 
   odoo${1:+_$1}_db:
     image: postgres:15
@@ -12346,7 +12345,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   odoo${1:+_$1}_app_data:
@@ -12481,7 +12480,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.lpcoutinho.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -12498,7 +12497,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_chatwoot
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_chatwoot
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -12659,7 +12658,7 @@ cat > chatwoot_nestor${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   chatwoot_nestor${1:+_$1}_app:
     image: sendingtk/chatwoot:latest ## Versão do Chatwoot
@@ -12766,7 +12765,7 @@ services:
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
         - traefik.http.routers.chatwoot_nestor${1:+_$1}_app.middlewares=sslheader@docker
 
-## --------------------------- ORION --------------------------- ##
+
 
   chatwoot_nestor${1:+_$1}_sidekiq:
     image: sendingtk/chatwoot:latest ## Versão do Chatwoot
@@ -12861,7 +12860,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   chatwoot_nestor${1:+_$1}_storage:
@@ -13020,12 +13019,12 @@ while true; do
 
     ##Pergunta o Dominio da UnoApi
     echo -e "\e[97mPasso$amarelo 1/11\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Uno API (ex: unoapi.oriondesign.art.br): \e[0m" && read -r url_unoapi
+    echo -en "\e[33mDigite o Dominio para a Uno API (ex: unoapi.lpcoutinho.com.br): \e[0m" && read -r url_unoapi
     echo ""
 
     ##Pergunta o Dominio do Chatwoot
     echo -e "\e[97mPasso$amarelo 2/11\e[0m"
-    echo -en "\e[33mDigite o Dominio do Chatwoot já instalado (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot_uno
+    echo -en "\e[33mDigite o Dominio do Chatwoot já instalado (ex: chatwoot.lpcoutinho.com.br): \e[0m" && read -r url_chatwoot_uno
     echo ""
 
     ##Pergunta o o token do usuario
@@ -13193,7 +13192,7 @@ cat > unoapi${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   unoapi${1:+_$1}:
     image: clairton/unoapi-cloud:latest
@@ -13265,7 +13264,7 @@ services:
       - traefik.http.services.unoapi${1:+_$1}.loadbalancer.passHostHeader=true
       - traefik.http.routers.unoapi${1:+_$1}.service=unoapi${1:+_$1}
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   unoapi${1:+_$1}_data:
@@ -13378,22 +13377,22 @@ while true; do
 
     ##Pergunta o Dominio do N8N
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.oriondesign.art.br): \e[0m" && read -r url_editorn8n
+    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.lpcoutinho.com.br): \e[0m" && read -r url_editorn8n
     echo ""
     
     ##Pergunta o Dominio do Webhook
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.oriondesign.art.br): \e[0m" && read -r url_webhookn8n
+    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.lpcoutinho.com.br): \e[0m" && read -r url_webhookn8n
     echo ""
 
     ##Pergunta Dominio do Chatwoot
     echo -e "\e[97mPasso$amarelo 3/5\e[0m"
-    echo -en "\e[33mDigite o dominio do Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r dominio_chatwoot
+    echo -en "\e[33mDigite o dominio do Chatwoot (ex: chatwoot.lpcoutinho.com.br): \e[0m" && read -r dominio_chatwoot
     echo ""
 
     ##Pergunta Dominio do Quepasa
     echo -e "\e[97mPasso$amarelo 4/5\e[0m"
-    echo -en "\e[33mDigite o dominio do Quepasa (ex: quepasa.oriondesign.art.br): \e[0m" && read -r dominio_quepasa
+    echo -en "\e[33mDigite o dominio do Quepasa (ex: quepasa.lpcoutinho.com.br): \e[0m" && read -r dominio_quepasa
     echo ""
 
     ##Pergunta Email do Quepasa
@@ -13515,10 +13514,10 @@ cat > n8n_quepasa${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n_quepasa${1:+_$1}_editor:
-    image: oriondesign/n8n-quepasa:latest ## Versão do N8N
+    image: lpcoutinho/n8n-quepasa:latest ## Versão do N8N
     command: start
 
     volumes:
@@ -13611,10 +13610,10 @@ services:
         - traefik.http.services.n8n_quepasa${1:+_$1}_editor.loadbalancer.server.port=5678
         - traefik.http.services.n8n_quepasa${1:+_$1}_editor.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n_quepasa${1:+_$1}_webhook:
-    image: oriondesign/n8n-quepasa:latest ## Versão do N8N
+    image: lpcoutinho/n8n-quepasa:latest ## Versão do N8N
     command: webhook
 
     volumes:
@@ -13706,10 +13705,10 @@ services:
         - traefik.http.services.n8n_quepasa${1:+_$1}_webhook.loadbalancer.server.port=5678
         - traefik.http.services.n8n_quepasa${1:+_$1}_webhook.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
   n8n_quepasa${1:+_$1}_worker:
-    image: oriondesign/n8n-quepasa:latest ## Versão do N8N
+    image: lpcoutinho/n8n-quepasa:latest ## Versão do N8N
     command: worker --concurrency=10
 
     volumes:
@@ -13792,7 +13791,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   n8n_quepasa${1:+_$1}_data:
@@ -13902,7 +13901,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Quepasa (ex: quepasa.oriondesign.art.br): \e[0m" && read -r url_quepasa
+    echo -en "\e[33mDigite o dominio para o Quepasa (ex: quepasa.lpcoutinho.com.br): \e[0m" && read -r url_quepasa
     echo ""
 
     ##Pergunta o email para a ferramenta
@@ -13980,7 +13979,7 @@ cat > quepasa${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   quepasa${1:+_$1}:
     image: deividms/quepasa:latest ## Imagem/versão do Quepasa
@@ -14001,7 +14000,7 @@ services:
       - QUEPASA_BASIC_AUTH_PASSWORD=$email_quepasa
 
       ## Titulo no celular
-      - APP_TITLE=OrionDesign ## Mude aqui o nome que vai aparecer no celular.
+      - APP_TITLE=LpCoutinho ## Mude aqui o nome que vai aparecer no celular.
 
       ## TimeZone
       - TZ=America/Sao_Paulo
@@ -14022,8 +14021,8 @@ services:
       - SIGNING_SECRET=$key_quepasa
 
       ## Webhook
-      #- WEBHOOK_QUEPASA=webhook.oriondesign.art.br/webhook/quepasa
-      #- WEBHOOK_TESTE_QUEPASA=n8n.oriondesign.art.br/webhook-test/quepasa
+      #- WEBHOOK_QUEPASA=webhook.lpcoutinho.com.br/webhook/quepasa
+      #- WEBHOOK_TESTE_QUEPASA=n8n.lpcoutinho.com.br/webhook-test/quepasa
             
       ## Portas
       - QUEPASA_EXTERNAL_PORT=31000
@@ -14077,7 +14076,7 @@ services:
         - traefik.http.services.quepasa${1:+_$1}.loadbalancer.server.port=31000
         - traefik.http.services.quepasa${1:+_$1}.loadbalancer.passHostHeader=true              
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   quepasa${1:+_$1}_volume:
@@ -14193,7 +14192,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o Docuseal (ex: docuseal.oriondesign.art.br): \e[0m" && read -r url_docuseal
+    echo -en "\e[33mDigite o dominio para o Docuseal (ex: docuseal.lpcoutinho.com.br): \e[0m" && read -r url_docuseal
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -14204,7 +14203,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_docuseal
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_docuseal
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -14333,7 +14332,7 @@ cat > docuseal${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   docuseal${1:+_$1}:
     image: docuseal/docuseal:latest
@@ -14384,7 +14383,7 @@ services:
         - traefik.http.routers.docuseal${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.docuseal${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   docuseal${1:+_$1}_data:
@@ -14492,22 +14491,22 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Grafana (ex: grafana.oriondesign.art.br): \e[0m" && read -r url_grafana
+    echo -en "\e[33mDigite o Dominio para o Grafana (ex: grafana.lpcoutinho.com.br): \e[0m" && read -r url_grafana
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Prometheus (ex: prometheus.oriondesign.art.br): \e[0m" && read -r url_prometheus
+    echo -en "\e[33mDigite o Dominio para o Prometheus (ex: prometheus.lpcoutinho.com.br): \e[0m" && read -r url_prometheus
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o cAdvisor (ex: cadvisor.oriondesign.art.br): \e[0m" && read -r url_cadvisor
+    echo -en "\e[33mDigite o Dominio para o cAdvisor (ex: cadvisor.lpcoutinho.com.br): \e[0m" && read -r url_cadvisor
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 4/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o NodeExporter (ex: node.oriondesign.art.br): \e[0m" && read -r url_nodeexporter
+    echo -en "\e[33mDigite o Dominio para o NodeExporter (ex: node.lpcoutinho.com.br): \e[0m" && read -r url_nodeexporter
     echo ""
 
     ## Limpa o terminal
@@ -14584,9 +14583,9 @@ sleep 1
 mkdir blablabla
 cd blablabla
 
-git clone https://github.com/oriondesign2015/SetupOrion.git > /dev/null 2>&1
+# git clone https://github.com/lpcoutinho/SetupLpCoutinho.git > /dev/null 2>&1
 
-sudo mv /root/blablabla/SetupOrion/Extras/Grafana/monitor-orion /opt
+sudo mv /root/blablabla/SetupLpCoutinho/Extras/Grafana/monitor-lpcoutinho /opt
 
 cd
 
@@ -14615,7 +14614,7 @@ else
 fi
 
 
-cp /root/datasource.yml /opt/monitor-orion/grafana/
+cp /root/datasource.yml /opt/monitor-lpcoutinho/grafana/
 if [ $? -eq 0 ]; then
     echo "2/6 - [ OK ]"
 else
@@ -14623,7 +14622,7 @@ else
     echo "Não foi possivel copiar o datasource para o diretório opt"
 fi
 
-cp /root/datasource.yml /opt/monitor-orion/grafana/provisioning/datasources/
+cp /root/datasource.yml /opt/monitor-lpcoutinho/grafana/provisioning/datasources/
 if [ $? -eq 0 ]; then
     echo "3/6 - [ OK ]"
 else
@@ -14672,7 +14671,7 @@ else
     echo "Não foi possivel criar o prometheus"
 fi
 
-mv /root/prometheus.yml /opt/monitor-orion/prometheus/
+mv /root/prometheus.yml /opt/monitor-lpcoutinho/prometheus/
 if [ $? -eq 0 ]; then
     echo "6/6 - [ OK ]"
 else
@@ -14696,13 +14695,13 @@ cat > monitor.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   prometheus:
     image: prom/prometheus:latest
 
     volumes:
-      - /opt/monitor-orion/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /opt/monitor-lpcoutinho/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
     networks:
       - $nome_rede_interna
@@ -14725,16 +14724,16 @@ services:
         - traefik.http.routers.prometheus.entrypoints=websecure
         - traefik.http.routers.prometheus.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   grafana:
     image: grafana/grafana:latest
 
     volumes:
-      - /opt/monitor-orion/grafana/grafana.ini:/etc/grafana/grafana.ini
-      - /opt/monitor-orion/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - /opt/monitor-orion/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - /opt/monitor-orion/grafana/dashboards:/etc/grafana/dashboards
+      - /opt/monitor-lpcoutinho/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - /opt/monitor-lpcoutinho/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - /opt/monitor-lpcoutinho/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - /opt/monitor-lpcoutinho/grafana/dashboards:/etc/grafana/dashboards
 
     networks:
       - $nome_rede_interna
@@ -14759,7 +14758,7 @@ services:
         - traefik.http.routers.grafana.entrypoints=websecure
         - traefik.http.routers.grafana.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   node-exporter:
     image: prom/node-exporter:latest
@@ -14786,7 +14785,7 @@ services:
         - traefik.http.routers.node-exporter.entrypoints=websecure
         - traefik.http.routers.node-exporter.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
@@ -14820,7 +14819,7 @@ services:
         - traefik.http.routers.cadvisor.entrypoints=websecure
         - traefik.http.routers.cadvisor.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna:
@@ -14938,18 +14937,18 @@ while true; do
 
     ##Pergunta o Dominio do Dify AI
     echo -e "\e[97mPasso$amarelo 1/9\e[0m"
-    echo -en "\e[33mDigite o dominio para o Dify AI (ex: dify.oriondesign.art.br): \e[0m" && read -r url_dify
+    echo -en "\e[33mDigite o dominio para o Dify AI (ex: dify.lpcoutinho.com.br): \e[0m" && read -r url_dify
     echo ""
 
     ##Pergunta o Dominio do Dify AI
     echo -e "\e[97mPasso$amarelo 2/9\e[0m"
-    echo -en "\e[33mDigite o dominio para o API do Dify AI (ex: api-dify.oriondesign.art.br): \e[0m" && read -r url_dify_api
+    echo -en "\e[33mDigite o dominio para o API do Dify AI (ex: api-dify.lpcoutinho.com.br): \e[0m" && read -r url_dify_api
     echo ""
 
     ##Pergunta o Dominio do Qdrant
     #read -r ip _ <<<$(hostname -I)
     #echo -e "\e[97mPasso$amarelo 2/10\e[0m"
-    #echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip  ou http://qdrant.oriondesign.art.br): \e[0m" && read -r url_quedrant
+    #echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip  ou http://qdrant.lpcoutinho.com.br): \e[0m" && read -r url_quedrant
     #echo ""
 
     ##Pergunta a Api Key do Qdrant
@@ -14967,7 +14966,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 4/9\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_email_dify
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_email_dify
     echo ""
 
     ## Pergunta a senha do SMTP
@@ -15160,7 +15159,7 @@ cat > dify${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   dify${1:+_$1}_api:
     image: langgenius/dify-api:latest ## Versão do Dify
@@ -15269,7 +15268,7 @@ services:
         - traefik.http.routers.dify${1:+_$1}_api.entrypoints=websecure
         - traefik.http.routers.dify${1:+_$1}_api.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   dify${1:+_$1}_worker:
     image: langgenius/dify-api:latest ## Versão do Dify
@@ -15336,7 +15335,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ## 
+ 
 
   dify${1:+_$1}_web:
     image: langgenius/dify-web:latest ## Versão do Dify
@@ -15374,7 +15373,7 @@ services:
         - traefik.http.routers.dify${1:+_$1}_web.entrypoints=websecure
         - traefik.http.routers.dify${1:+_$1}_web.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   dify${1:+_$1}_sandbox:
     image: langgenius/dify-sandbox:latest
@@ -15398,7 +15397,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   dify${1:+_$1}_weaviate:
     image: semitechnologies/weaviate:latest ## Versão do Weaviate
@@ -15438,7 +15437,7 @@ services:
           cpus: "1"
           memory: 2048M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   dify${1:+_$1}_storage:
@@ -15548,12 +15547,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o WebUI Ollama (ex: ollama.oriondesign.art.br): \e[0m" && read -r url_ollama
+    echo -en "\e[33mDigite o dominio para o WebUI Ollama (ex: ollama.lpcoutinho.com.br): \e[0m" && read -r url_ollama
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
-    echo -en "\e[33mDigite o dominio para a API Ollama (ex: apiollama.oriondesign.art.br): \e[0m" && read -r url_apiollama
+    echo -en "\e[33mDigite o dominio para a API Ollama (ex: apiollama.lpcoutinho.com.br): \e[0m" && read -r url_apiollama
     echo ""
     
     ## Limpa o terminal
@@ -15625,7 +15624,7 @@ cat > ollama${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   ollama${1:+_$1}:
     image: ollama/ollama:latest
@@ -15658,7 +15657,7 @@ services:
         - traefik.http.services.ollama${1:+_$1}.loadbalancer.server.port=11434
         - traefik.http.services.ollama${1:+_$1}.loadbalancer.passHostHeader=1
 
-## --------------------------- ORION --------------------------- ##
+
 
   openwebui${1:+_$1}:
     image: ghcr.io/open-webui/open-webui:main
@@ -15692,7 +15691,7 @@ services:
         - traefik.http.services.openwebui${1:+_$1}.loadbalancer.server.port=8080
         - traefik.http.services.openwebui${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   ollama${1:+_$1}_data:
@@ -15796,7 +15795,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/7\e[0m"
-    echo -en "\e[33mDigite o dominio para o Affine (ex: affine.oriondesign.art.br): \e[0m" && read -r url_affine
+    echo -en "\e[33mDigite o dominio para o Affine (ex: affine.lpcoutinho.com.br): \e[0m" && read -r url_affine
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -15955,7 +15954,7 @@ cat > affine${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   affine${1:+_$1}:
     image: ghcr.io/toeverything/affine-graphql:stable-39476d1
@@ -16021,7 +16020,7 @@ services:
         - traefik.frontend.headers.STSPreload=true
         - traefik.frontend.headers.STSSeconds=31536000
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   affine${1:+_$1}_config:
@@ -16133,7 +16132,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/9\e[0m"
-    echo -en "\e[33mDigite o dominio para o Directus (ex: directus.oriondesign.art.br): \e[0m" && read -r url_directus
+    echo -en "\e[33mDigite o dominio para o Directus (ex: directus.lpcoutinho.com.br): \e[0m" && read -r url_directus
     echo ""
 
      ##Pergunta o Dominio para a ferramenta
@@ -16334,7 +16333,7 @@ cat > directus${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   directus${1:+_$1}:
     image: directus/directus:latest
@@ -16400,7 +16399,7 @@ services:
         - traefik.http.services.directus${1:+_$1}.loadbalancer.server.port=8055
         - traefik.docker.network=proxy
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   directus${1:+_$1}_uploads:
@@ -16512,7 +16511,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o VaultWarden (ex: vaultwarden.oriondesign.art.br): \e[0m" && read -r url_vaultwarden
+    echo -en "\e[33mDigite o Dominio para o VaultWarden (ex: vaultwarden.lpcoutinho.com.br): \e[0m" && read -r url_vaultwarden
     echo ""
     
     ## Pergunta o Email SMTP
@@ -16621,7 +16620,7 @@ cat > vaultwarden${1:+_$1}.yaml <<-EOF
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   vaultwarden${1:+_$1}:
     image: vaultwarden/server:latest
@@ -16672,7 +16671,7 @@ services:
         - "traefik.http.middlewares.compresstraefik.compress=true"
         - "traefik.docker.network=$nome_rede_interna"
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   vaultwarden${1:+_$1}_data:
@@ -16779,12 +16778,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o NextCloud (ex: nextcloud.oriondesign.art.br): \e[0m" && read -r url_nextcloud
+    echo -en "\e[33mDigite o dominio para o NextCloud (ex: nextcloud.lpcoutinho.com.br): \e[0m" && read -r url_nextcloud
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
-    echo -en "\e[33mDigite o Usuario para o NextCloud (ex: orion): \e[0m" && read -r user_nextcloud
+    echo -en "\e[33mDigite o Usuario para o NextCloud (ex: lpcoutinho): \e[0m" && read -r user_nextcloud
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -16903,7 +16902,7 @@ cat > nextcloud${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   nextcloud${1:+_$1}:
     image: nextcloud:latest
@@ -16954,7 +16953,7 @@ services:
         - traefik.http.middlewares.nextcloud${1:+_$1}_redirectregex.redirectregex.regex=https://(.*)/.well-known/(?:card|cal)dav
         - traefik.http.middlewares.nextcloud${1:+_$1}_redirectregex.redirectregex.replacement=https://$$1/remote.php/dav
 
-## --------------------------- ORION --------------------------- ##
+
 
   nextcloud${1:+_$1}_cron:
     image: nextcloud:latest
@@ -16970,7 +16969,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   nextcloud${1:+_$1}_data:
@@ -17091,7 +17090,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Strapi (ex: strapi.oriondesign.art.br): \e[0m" && read -r url_strapi
+    echo -en "\e[33mDigite o dominio para o Strapi (ex: strapi.lpcoutinho.com.br): \e[0m" && read -r url_strapi
     echo ""
     
     ## Limpa o terminal
@@ -17165,7 +17164,7 @@ cat > strapi${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   strapi${1:+_$1}_app:
     image: strapi/strapi
@@ -17212,7 +17211,7 @@ services:
         - traefik.http.services.strapi${1:+_$1}.loadbalancer.server.port=1337
         - traefik.http.services.strapi${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   strapi${1:+_$1}_db:
     image: percona/percona-server:8.0
@@ -17245,7 +17244,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   strapi${1:+_$1}_config:
@@ -17370,7 +17369,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o PhpMyAdmin (ex: phpmyadmin.oriondesign.art.br): \e[0m" && read -r url_phpmyadmin
+    echo -en "\e[33mDigite o dominio para o PhpMyAdmin (ex: phpmyadmin.lpcoutinho.com.br): \e[0m" && read -r url_phpmyadmin
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -17380,7 +17379,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     #echo -e "\e[97mPasso$amarelo 4/4\e[0m"
-    #echo -en "\e[33mDigite o Usuario MySQL  (ex: oriondesign): \e[0m" && read -r user_phpmyadmin
+    #echo -en "\e[33mDigite o Usuario MySQL  (ex: lpcoutinho): \e[0m" && read -r user_phpmyadmin
     #echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -17464,7 +17463,7 @@ cat > phpmyadmin${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   phpmyadmin${1:+_$1}:
     image: phpmyadmin/phpmyadmin:latest
@@ -17504,7 +17503,7 @@ services:
         - traefik.http.services.phpmyadmin${1:+_$1}.loadbalancer.server.port=80
         - traefik.http.routers.phpmyadmin${1:+_$1}.service=phpmyadmin${1:+_$1}
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna:
@@ -17707,12 +17706,12 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Supabase (ex: supabase.oriondesign.art.br): \e[0m" && read -r url_supabase
+    echo -en "\e[33mDigite o Dominio para o Supabase (ex: supabase.lpcoutinho.com.br): \e[0m" && read -r url_supabase
     echo ""
 
     ##Pergunta o Dominio do Viewer
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Usuario para o Supabase (ex: OrionDesign): \e[0m" && read -r user_supabase
+    echo -en "\e[33mDigite o Usuario para o Supabase (ex: LpCoutinho): \e[0m" && read -r user_supabase
     echo ""
 
     ##Pergunta a versão da ferramenta
@@ -17729,7 +17728,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     #echo -e "\e[97mPasso$amarelo 5/10\e[0m"
     #echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    #echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_supabase
+    #echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_supabase
     #echo ""
     
     ## Pergunta a senha do SMTP
@@ -17881,7 +17880,7 @@ sleep 1
 cd
 mkdir temp
 cd temp
-git clone --depth 1 https://github.com/oriondesign2015/SetupOrion > /dev/null 2>&1
+git clone --depth 1 https://github.com/lpcoutinho/SetupLpCoutinho > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "1/3 - [ OK ] - Baixando Repositório do Supabase"
 else
@@ -17889,7 +17888,7 @@ else
     echo "Não foi possivel Baixar."
 fi
 
-mv SetupOrion/Extras/Supabase /root/supabase${1:+_$1}
+mv SetupLpCoutinho/Extras/Supabase /root/supabase${1:+_$1}
 
 cd
 
@@ -17961,7 +17960,7 @@ cat > supabase${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   studio${1:+_$1}:
     image: supabase/studio:20241014-c083b3b ## Versão do Supabase Studio
@@ -17979,8 +17978,8 @@ services:
       - NEXT_ANALYTICS_BACKEND_PROVIDER=postgres
 
     ## Configuração de Branding
-      - DEFAULT_ORGANIZATION_NAME=OrionDesign
-      - DEFAULT_PROJECT_NAME=SetupOrion
+      - DEFAULT_ORGANIZATION_NAME=LpCoutinho
+      - DEFAULT_PROJECT_NAME=SetupLpCoutinho
 
     ## Configuração do Banco de Dados PostgreSQL
       - POSTGRES_PASSWORD=$Senha_Postgres
@@ -18009,7 +18008,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   kong${1:+_$1}:
     image: kong:2.8.1 ## Versão do Supabase Kong
@@ -18060,7 +18059,7 @@ services:
         - traefik.http.routers.kong${1:+_$1}.tls.certresolver=letsencryptresolver
         - traefik.http.routers.kong${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   auth${1:+_$1}:
     image: supabase/gotrue:v2.158.1 ## Versão do Supabase Auth
@@ -18118,7 +18117,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   rest${1:+_$1}:
     image: postgrest/postgrest:v12.2.0 ## Versão do Supabase Rest
@@ -18148,7 +18147,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   realtime${1:+_$1}:
     image: supabase/realtime:v2.30.34 ## Versão do Supabase Realtime
@@ -18187,7 +18186,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   storage${1:+_$1}:
     image: supabase/storage-api:v1.11.13 ## Versão do Supabase Storage
@@ -18233,7 +18232,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   imgproxy${1:+_$1}:
     image: darthsim/imgproxy:v3.8.0 ## Versão do Supabase Imgproxy
@@ -18258,7 +18257,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   meta${1:+_$1}:
     image: supabase/postgres-meta:v0.84.2 ## Versão do Meta 
@@ -18282,7 +18281,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   functions${1:+_$1}:
     image: supabase/edge-runtime:v1.59.0 ## Versão do Supabase Functions
@@ -18313,7 +18312,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   analytics${1:+_$1}:
     image: supabase/logflare:1.4.0 ## Versão do Supabase Analytics
@@ -18349,7 +18348,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   db${1:+_$1}:
     image: supabase/postgres:15.1.1.78 ## Versão do Supabase Db
@@ -18394,7 +18393,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   vector${1:+_$1}:
     image: timberio/vector:0.28.1-alpine ## Versão do Supabase Vector
@@ -18420,7 +18419,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   supavisor${1:+_$1}:
     image: supabase/supavisor:1.1.56 ## Versão do Supabase Supavisor
@@ -18476,7 +18475,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   supabase${1:+_$1}_db_config:
@@ -18595,12 +18594,12 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Ntfy (ex: ntfy.oriondesign.art.br): \e[0m" && read -r url_ntfy
+    echo -en "\e[33mDigite o Dominio para o Ntfy (ex: ntfy.lpcoutinho.com.br): \e[0m" && read -r url_ntfy
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
-    echo -en "\e[33mDigite o Usuario (ex: oriondesign): \e[0m" && read -r user_ntfy
+    echo -en "\e[33mDigite o Usuario (ex: lpcoutinho): \e[0m" && read -r user_ntfy
     echo ""
 
     ##Pergunta o Dominio para aplicação
@@ -18687,7 +18686,7 @@ cat > ntfy${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   ntfy${1:+_$1}:
     image: binwiederhier/ntfy:latest
@@ -18725,7 +18724,7 @@ services:
         - traefik.http.routers.ntfy${1:+_$1}.middlewares=ntfy-auth
         - traefik.http.routers.ntfy${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   ntfy${1:+_$1}_cache:
@@ -18843,12 +18842,12 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/8\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Lowcoder (ex: lowcoder.oriondesign.art.br): \e[0m" && read -r url_lowcoder
+    echo -en "\e[33mDigite o Dominio para o Lowcoder (ex: lowcoder.lpcoutinho.com.br): \e[0m" && read -r url_lowcoder
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 2/8\e[0m"
-    echo -en "\e[33mDigite o User do MongoDB (ex: oriondesign): \e[0m" && read -r user_mongodb_lowcoder
+    echo -en "\e[33mDigite o User do MongoDB (ex: lpcoutinho): \e[0m" && read -r user_mongodb_lowcoder
     echo ""
 
     ##Pergunta o Dominio para aplicação
@@ -18864,7 +18863,7 @@ while true; do
     ## Pergunta o Ususario SMTP
     echo -e "\e[97mPasso$amarelo 5/8\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuario para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_lowcoder
+    echo -en "\e[33mDigite o Usuario para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_lowcoder
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -19004,7 +19003,7 @@ cat > lowcoder${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   lowcoder${1:+_$1}_api:
     image: lowcoderorg/lowcoder-ce-api-service:latest
@@ -19067,7 +19066,7 @@ services:
           cpus: "0.5"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   lowcoder${1:+_$1}_node:
     image: lowcoderorg/lowcoder-ce-node-service:latest
@@ -19091,7 +19090,7 @@ services:
           cpus: "0.5"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   lowcoder${1:+_$1}_frontend:
     image: lowcoderorg/lowcoder-ce-frontend:latest
@@ -19125,7 +19124,7 @@ services:
         - traefik.http.routers.lowcoder${1:+_$1}.tls.certresolver=letsencryptresolver
         - traefik.http.routers.lowcoder${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   lowcoder${1:+_$1}_assets:
@@ -19237,7 +19236,7 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o Dominio para LangFlow (ex: langflow.oriondesign.art.br): \e[0m" && read -r url_langflow
+    echo -en "\e[33mDigite o Dominio para LangFlow (ex: langflow.lpcoutinho.com.br): \e[0m" && read -r url_langflow
     echo ""
 
     ##Pergunta o Usuario para a ferramenta
@@ -19353,7 +19352,7 @@ cat > langflow${1:+_$1}.yaml <<EOL
 version: "3.8"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   langflow${1:+_$1}:
     image: langflowai/langflow:v1.0.19.post2
@@ -19400,7 +19399,7 @@ services:
         - traefik.http.routers.langflow${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.langflow${1:+_$1}.tls.certresolver=letsencryptresolver
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   langflow${1:+_$1}_data:
@@ -19508,7 +19507,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o OpenProject (ex: openproject.oriondesign.art.br): \e[0m" && read -r url_openproject
+    echo -en "\e[33mDigite o dominio para o OpenProject (ex: openproject.lpcoutinho.com.br): \e[0m" && read -r url_openproject
     echo ""
     
     ## Limpa o terminal
@@ -19609,7 +19608,7 @@ cat > openproject${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   openproject${1:+_$1}:
     image: openproject/openproject:14.1.1
@@ -19668,7 +19667,7 @@ services:
         - traefik.http.services.openproject${1:+_$1}.loadbalancer.server.port=8080
         - traefik.http.services.openproject${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   openproject${1:+_$1}_pgdata:
@@ -19780,7 +19779,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Zep (ex: zep.oriondesign.art.br): \e[0m" && read -r url_zep
+    echo -en "\e[33mDigite o Dominio para o Zep (ex: zep.lpcoutinho.com.br): \e[0m" && read -r url_zep
     echo ""
 
     ## Pergunta o nome do Usuario do Motor
@@ -19859,7 +19858,7 @@ cd
 mkdir temp
 cd temp
 
-git clone --depth 1 https://github.com/oriondesign2015/setuporion > /dev/null 2>&1
+git clone --depth 1 https://github.com/lpcoutinho/SetupLpCoutinho > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "1/1 - [ OK ] - Baixando Repositório do Zep"
 else
@@ -19867,7 +19866,7 @@ else
     echo "Não foi possivel Baixar."
 fi
 
-mv setuporion/Extras/Zep /root/zep${1:+_$1}
+mv setuplpcoutinho/Extras/Zep /root/zep${1:+_$1}
 
 cd
 cd
@@ -19907,7 +19906,7 @@ cat > zep${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   zep${1:+_$1}_nlp:
     image: ghcr.io/getzep/zep-nlp-server:latest
@@ -19922,7 +19921,7 @@ services:
         constraints:
           - node.role == manager
 
-## --------------------------- ORION --------------------------- ##
+
 
   zep${1:+_$1}_app:
     image: ghcr.io/getzep/zep:latest
@@ -19976,7 +19975,7 @@ services:
         - traefik.http.services.zep${1:+_$1}.loadbalancer.passHostHeader=true
         - traefik.http.routers.zep${1:+_$1}.service=zep${1:+_$1}
 
-## --------------------------- ORION --------------------------- ##
+
     
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -20076,7 +20075,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o HumHub (ex: humhub.oriondesign.art.br): \e[0m" && read -r url_humhub
+    echo -en "\e[33mDigite o Dominio para o HumHub (ex: humhub.lpcoutinho.com.br): \e[0m" && read -r url_humhub
     echo ""
 
     ## Pergunta o usuario da ferramenta
@@ -20099,7 +20098,7 @@ while true; do
     ## Pergunta o usuario da ferramenta
     echo -e "\e[97mPasso$amarelo 3/10\e[0m"
     echo -e "$amarelo--> Sem caracteres especiais: \!#$ e/ou espaços"
-    echo -en "\e[33mDigite um Usuario Admin (ex: OrionDesign): \e[0m" && read -r user_humhub
+    echo -en "\e[33mDigite um Usuario Admin (ex: LpCoutinho): \e[0m" && read -r user_humhub
     echo ""
 
     ## Pergunta o email da ferramenta
@@ -20121,7 +20120,7 @@ while true; do
     ## Pergunta o User SMTP
     echo -e "\e[97mPasso$amarelo 7/10\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuario do SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_humhub
+    echo -en "\e[33mDigite o Usuario do SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_humhub
     echo ""
     
     ## Pergunta a Senha SMTP
@@ -20278,7 +20277,7 @@ cat > humhub${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   humhub${1:+_$1}:
     image: mriedmann/humhub:latest
@@ -20343,7 +20342,7 @@ services:
         - traefik.http.services.humhub${1:+_$1}.loadbalancer.server.port=80
         - traefik.http.services.humhub${1:+_$1}.loadbalancer.passHostHeader=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   humhub${1:+_$1}_data:
@@ -20474,12 +20473,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Yourls (ex: yourls.oriondesign.art.br): \e[0m" && read -r url_yourls
+    echo -en "\e[33mDigite o dominio para o Yourls (ex: yourls.lpcoutinho.com.br): \e[0m" && read -r url_yourls
     echo ""
     
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
-    echo -en "\e[33mDigite o Usuario (ex: oriondesign): \e[0m" && read -r user_yourls
+    echo -en "\e[33mDigite o Usuario (ex: lpcoutinho): \e[0m" && read -r user_yourls
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -20577,7 +20576,7 @@ cat > yourls${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   yourls${1:+_$1}:
     image: yourls:latest
@@ -20612,7 +20611,7 @@ services:
         - traefik.http.routers.yourls${1:+_$1}.service=yourls${1:+_$1}
         - traefik.http.services.yourls${1:+_$1}.loadbalancer.server.port=80
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -20716,7 +20715,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o TwentyCRM (ex: twentycrm.oriondesign.art.br): \e[0m" && read -r url_twentycrm
+    echo -en "\e[33mDigite o dominio para o TwentyCRM (ex: twentycrm.lpcoutinho.com.br): \e[0m" && read -r url_twentycrm
     echo ""
 
     ## Pergunta o email SMTP
@@ -20727,7 +20726,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_twentycrm
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r user_smtp_twentycrm
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -20834,7 +20833,7 @@ cat > twentycrm${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   twentycrm${1:+_$1}_server:
     image: twentycrm/twenty:latest
@@ -20876,7 +20875,7 @@ services:
         - traefik.http.routers.twentycrm${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.twentycrm${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   twentycrm${1:+_$1}_worker:
     image: twentycrm/twenty:latest
@@ -20907,7 +20906,7 @@ services:
           cpus: "0.5"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   twentycrm${1:+_$1}_db:
     image: twentycrm/twenty-postgres:latest
@@ -20935,7 +20934,7 @@ services:
           cpus: "0.5"
           memory: 1024M    
     
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   twentycrm_data:
@@ -21049,7 +21048,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Mattermost (ex: mattermost.oriondesign.art.br): \e[0m" && read -r url_mattermost
+    echo -en "\e[33mDigite o dominio para o Mattermost (ex: mattermost.lpcoutinho.com.br): \e[0m" && read -r url_mattermost
     echo ""
     
     ## Limpa o terminal
@@ -21135,7 +21134,7 @@ cat > mattermost${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   mattermost${1:+_$1}:
     image: mattermost/mattermost-team-edition:latest
@@ -21179,7 +21178,7 @@ services:
         - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
         - traefik.http.routers.mattermost${1:+_$1}.middlewares=sslheader@docker
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   mattermost${1:+_$1}_data:
@@ -21298,7 +21297,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o dominio para o Outline (ex: outline.oriondesign.art.br): \e[0m" && read -r url_outline
+    echo -en "\e[33mDigite o dominio para o Outline (ex: outline.lpcoutinho.com.br): \e[0m" && read -r url_outline
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -21429,7 +21428,7 @@ cat > outline${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   outline${1:+_$1}:
     image: outlinewiki/outline:0.75.0
@@ -21512,7 +21511,7 @@ services:
         - traefik.http.routers.outline${1:+_$1}.service=outline${1:+_$1}
         - traefik.http.services.outline${1:+_$1}.loadbalancer.server.port=3000
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   outline${1:+_$1}_data:
@@ -21620,7 +21619,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o FocalBoard (ex: focalboard.oriondesign.art.br): \e[0m" && read -r url_focalboard
+    echo -en "\e[33mDigite o dominio para o FocalBoard (ex: focalboard.lpcoutinho.com.br): \e[0m" && read -r url_focalboard
     echo ""
     
     ## Limpa o terminal
@@ -21686,7 +21685,7 @@ cat > focalboard${1:+_$1}.yaml <<EOL
 version: "3.8"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   focalboard${1:+_$1}:
     image: mattermost/focalboard:latest
@@ -21719,7 +21718,7 @@ services:
         - traefik.http.routers.focalboard${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.focalboard${1:+_$1}.tls.certresolver=letsencryptresolver
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   focalboard${1:+_$1}_data:
@@ -21826,7 +21825,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o GLPI (ex: glpi.oriondesign.art.br): \e[0m" && read -r url_glpi
+    echo -en "\e[33mDigite o dominio para o GLPI (ex: glpi.lpcoutinho.com.br): \e[0m" && read -r url_glpi
     echo ""
     
     ## Limpa o terminal
@@ -21912,7 +21911,7 @@ cat > glpi${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   glpi${1:+_$1}:
     image: diouxx/glpi:latest
@@ -21947,7 +21946,7 @@ services:
         - traefik.http.routers.glpi${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.glpi${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   glpi${1:+_$1}_glpi:
@@ -22066,13 +22065,13 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Anything LLM (ex: anythingllm.oriondesign.art.br): \e[0m" && read -r url_anythingllm
+    echo -en "\e[33mDigite o dominio para o Anything LLM (ex: anythingllm.lpcoutinho.com.br): \e[0m" && read -r url_anythingllm
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
     read -r ip _ <<<$(hostname -I)
-    echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip:6333  ou http://qdrant.oriondesign.art.br:6333): \e[0m" && read -r qdrant_anythingllm
+    echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip:6333  ou http://qdrant.lpcoutinho.com.br:6333): \e[0m" && read -r qdrant_anythingllm
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -22150,7 +22149,7 @@ cat > anythingllm${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   anythingllm${1:+_$1}:
     image: mintplexlabs/anythingllm:latest
@@ -22193,7 +22192,7 @@ services:
         - traefik.http.routers.anythingllm${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.anythingllm${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   anythingllm${1:+_$1}_storage:
@@ -22307,7 +22306,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Excalidraw (ex: excalidraw.oriondesign.art.br): \e[0m" && read -r url_excalidraw
+    echo -en "\e[33mDigite o dominio para o Excalidraw (ex: excalidraw.lpcoutinho.com.br): \e[0m" && read -r url_excalidraw
     echo ""
     
     ## Limpa o terminal
@@ -22373,7 +22372,7 @@ cat > excalidraw${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   excalidraw${1:+_$1}:
     image: excalidraw/excalidraw:latest
@@ -22407,7 +22406,7 @@ services:
         - traefik.http.routers.excalidraw${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.excalidraw${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 
 volumes:
@@ -22522,7 +22521,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Easy!Appointments (ex: easyappointments.oriondesign.art.br): \e[0m" && read -r url_easyappointments
+    echo -en "\e[33mDigite o dominio para o Easy!Appointments (ex: easyappointments.lpcoutinho.com.br): \e[0m" && read -r url_easyappointments
     echo ""
     
     ## Limpa o terminal
@@ -22622,7 +22621,7 @@ cat > easyappointments${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   easyapointments${1:+_$1}:
     image: alextselegidis/easyappointments:latest
@@ -22674,7 +22673,7 @@ services:
         - traefik.http.routers.easyapointments${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.easyapointments${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   easyapointments${1:+_$1}_data:
@@ -22782,7 +22781,7 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/8\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Builder do Documenso (ex: documenso.oriondesign.art.br): \e[0m" && read -r url_documenso
+    echo -en "\e[33mDigite o Dominio para o Builder do Documenso (ex: documenso.lpcoutinho.com.br): \e[0m" && read -r url_documenso
     echo ""
 
     ##Pergunta o Email SMTP
@@ -22793,7 +22792,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/8\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_documenso
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_documenso
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -22974,7 +22973,7 @@ cat > documenso${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   documenso${1:+_$1}:
     image: documenso/documenso:latest
@@ -22990,7 +22989,7 @@ services:
       - PORT=3000
       - NEXTAUTH_URL=https://$url_documenso
       - NEXT_PUBLIC_WEBAPP_URL=https://$url_documenso
-      - NEXT_PUBLIC_MARKETING_URL=https://oriondesign.art.br
+      - NEXT_PUBLIC_MARKETING_URL=https://lpcoutinho.com.br
 
       ## Secret Keys
       - NEXTAUTH_SECRET=$key_documenso1
@@ -23049,7 +23048,7 @@ services:
         - traefik.http.routers.documenso${1:+_$1}.tls=true
     
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   documenso${1:+_$1}_cert:
@@ -23158,17 +23157,17 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/10\e[0m"
-    echo -en "\e[33mDigite o dominio para o Moodle (ex: moodle.oriondesign.art.br): \e[0m" && read -r url_moodle
+    echo -en "\e[33mDigite o dominio para o Moodle (ex: moodle.lpcoutinho.com.br): \e[0m" && read -r url_moodle
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/10\e[0m"
-    echo -en "\e[33mDigite o nome para o projeto (ex: OrionDesign): \e[0m" && read -r project_name_moodle
+    echo -en "\e[33mDigite o nome para o projeto (ex: LpCoutinho): \e[0m" && read -r project_name_moodle
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 3/10\e[0m"
-    echo -en "\e[33mDigite um Nome de Usuario (ex: oriondesign): \e[0m" && read -r user_moodle
+    echo -en "\e[33mDigite um Nome de Usuario (ex: lpcoutinho): \e[0m" && read -r user_moodle
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -23191,7 +23190,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 7/10\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_moodle
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_moodle
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -23318,7 +23317,7 @@ cat > moodle${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   moodle${1:+_$1}_app:
     image: bitnami/moodle:latest
@@ -23353,9 +23352,9 @@ services:
       ## Dados MarinaDB
       - MOODLE_DATABASE_HOST=moodle${1:+_$1}_mariadb
       - MOODLE_DATABASE_PORT_NUMBER=3306
-      - MOODLE_DATABASE_USER=orion_moodle
+      - MOODLE_DATABASE_USER=lpcoutinho_moodle
       - MOODLE_DATABASE_PASSWORD=$senha_marinadb
-      - MOODLE_DATABASE_NAME=orionbase_moodle
+      - MOODLE_DATABASE_NAME=lpcoutinhobase_moodle
       - ALLOW_EMPTY_PASSWORD=no
 
     deploy:
@@ -23377,7 +23376,7 @@ services:
         - traefik.http.routers.moodle${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.moodle${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   moodle${1:+_$1}_mariadb:
     image: bitnami/mariadb:latest
@@ -23390,9 +23389,9 @@ services:
 
     environment:  
       ## Dados MarinaDB
-      - MARIADB_USER=orion_moodle
+      - MARIADB_USER=lpcoutinho_moodle
       - MARIADB_ROOT_PASSWORD=$senha_marinadb
-      - MARIADB_DATABASE=orionbase_moodle
+      - MARIADB_DATABASE=lpcoutinhobase_moodle
       - MARIADB_PASSWORD=$senha_marinadb
       - MARIADB_CHARACTER_SET=utf8mb4
       - MARIADB_COLLATE=utf8mb4_unicode_ci
@@ -23409,7 +23408,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   moodle${1:+_$1}_app_apache_conf:
@@ -23530,7 +23529,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o Dominio para a ToolJet (ex: tooljet.oriondesign.art.br): \e[0m" && read -r url_tooljet
+    echo -en "\e[33mDigite o Dominio para a ToolJet (ex: tooljet.lpcoutinho.com.br): \e[0m" && read -r url_tooljet
     echo ""
 
     ##Pergunta o Email SMTP
@@ -23541,7 +23540,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_tooljet
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_smtp_tooljet
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -23690,7 +23689,7 @@ cat > tooljet${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   tooljet${1:+_$1}_app:
     image: tooljet/tooljet:ee-lts-latest
@@ -23795,7 +23794,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -23901,12 +23900,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Stirling PDF (ex: stirlingpdf.oriondesign.art.br): \e[0m" && read -r url_stirlingpdf
+    echo -en "\e[33mDigite o dominio para o Stirling PDF (ex: stirlingpdf.lpcoutinho.com.br): \e[0m" && read -r url_stirlingpdf
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
-    echo -en "\e[33mDigite o nome para o App (ex: OrionPDF): \e[0m" && read -r name_stirlingpdf
+    echo -en "\e[33mDigite o nome para o App (ex: LpCoutinhoPDF): \e[0m" && read -r name_stirlingpdf
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -23985,7 +23984,7 @@ cat > stirlingpdf${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   stirlingpdf${1:+_$1}:
     image: frooodle/s-pdf:latest ## Versão da aplicação
@@ -24034,7 +24033,7 @@ services:
         - traefik.http.routers.stirlingpdf${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.stirlingpdf${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   stirlingpdf${1:+_$1}_data:
@@ -24149,7 +24148,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o ClickHouse (ex: clickhouse.oriondesign.art.br): \e[0m" && read -r url_clickhouse
+    echo -en "\e[33mDigite o dominio para o ClickHouse (ex: clickhouse.lpcoutinho.com.br): \e[0m" && read -r url_clickhouse
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -24233,7 +24232,7 @@ cat > clickhouse${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   clickhouse:${1:+_$1}
     image: clickhouse/clickhouse-server:23.8.8.20-alpine
@@ -24270,7 +24269,7 @@ services:
         - traefik.http.routers.clickhouse${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.clickhouse${1:+_$1}.tls=true        
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   clickhouse${1:+_$1}_data:
@@ -24387,7 +24386,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o RedisInsight (ex: redisinsight.oriondesign.art.br): \e[0m" && read -r url_redisinsight
+    echo -en "\e[33mDigite o dominio para o RedisInsight (ex: redisinsight.lpcoutinho.com.br): \e[0m" && read -r url_redisinsight
     echo ""
     
     ## Limpa o terminal
@@ -24453,7 +24452,7 @@ cat > redisinsight${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   redisinsight${1:+_$1}:
     image: redislabs/redisinsight:latest
@@ -24492,7 +24491,7 @@ services:
         - traefik.http.routers.redisinsight${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.redisinsight${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   redisinsight${1:+_$1}_data:
@@ -24600,7 +24599,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Traccar (ex: traccar.oriondesign.art.br): \e[0m" && read -r url_traccar
+    echo -en "\e[33mDigite o dominio para o Traccar (ex: traccar.lpcoutinho.com.br): \e[0m" && read -r url_traccar
     echo ""
     
     ## Limpa o terminal
@@ -24701,7 +24700,7 @@ cat > traccar${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   traccar${1:+_$1}:
     image: traccar/traccar:latest
@@ -24736,7 +24735,7 @@ services:
         - traefik.http.routers.traccar${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.traccar${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   traccar${1:+_$1}_db:
     image: mysql:8.0
@@ -24764,7 +24763,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   traccar${1:+_$1}_data:
@@ -24872,7 +24871,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Firecrawl (ex: firecrawl.oriondesign.art.br): \e[0m" && read -r url_firecrawl
+    echo -en "\e[33mDigite o dominio para o Firecrawl (ex: firecrawl.lpcoutinho.com.br): \e[0m" && read -r url_firecrawl
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -24948,10 +24947,10 @@ cat > firecrawl${1:+_$1}.yaml <<EOL
 version: "3.8"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
   firecrawl${1:+_$1}_api:
-    image: oriondesign/firecrawl-api:latest
+    image: lpcoutinho/firecrawl-api:latest
     command: [ "pnpm", "run", "start:production" ]
 
     networks:
@@ -25009,10 +25008,10 @@ services:
         - traefik.http.routers.firecrawl${1:+_$1}_api.entrypoints=websecure
         - traefik.http.routers.firecrawl${1:+_$1}_api.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
   firecrawl${1:+_$1}_worker:
-    image: oriondesign/firecrawl-api:latest
+    image: lpcoutinho/firecrawl-api:latest
     command: [ "pnpm", "run", "workers" ]
 
     networks:
@@ -25062,10 +25061,10 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
   firecrawl${1:+_$1}_playwright:
-    image: oriondesign/firecrawl-playwright-service:latest
+    image: lpcoutinho/firecrawl-playwright-service:latest
 
     networks:
      - $nome_rede_interna ## Nome da rede interna
@@ -25088,7 +25087,7 @@ services:
           cpus: "1"
           memory: 1024M
 
-## --------------------------- ORION --------------------------- ##
+
 
 networks:
   $nome_rede_interna: ## Nome da rede interna
@@ -25184,7 +25183,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Wuzapi (ex: wuzapi.oriondesign.art.br): \e[0m" && read -r url_wuzapi
+    echo -en "\e[33mDigite o dominio para o Wuzapi (ex: wuzapi.lpcoutinho.com.br): \e[0m" && read -r url_wuzapi
     echo ""
     
     ## Limpa o terminal
@@ -25275,7 +25274,7 @@ cat > wuzapi${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-## --------------------------- ORION --------------------------- ##
+
 
  wuzapi${1:+_$1}:
   image: ruben18salazar/wuzapi:api
@@ -25319,7 +25318,7 @@ services:
         - traefik.http.routers.wuzapi${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.wuzapi${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   wuzapi${1:+_$1}_dbdata:
@@ -25428,7 +25427,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o Krayin CRM (ex: krayincrm.oriondesign.art.br): \e[0m" && read -r url_krayincrm
+    echo -en "\e[33mDigite o dominio para o Krayin CRM (ex: krayincrm.lpcoutinho.com.br): \e[0m" && read -r url_krayincrm
     echo ""
 
     ##Pergunta o Email SMTP
@@ -25439,7 +25438,7 @@ while true; do
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_krayincrm
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: lpcoutinho ou coutinholps@gmail.com): \e[0m" && read -r usuario_email_krayincrm
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -25567,8 +25566,8 @@ verificar_container_mysql
 sleep 30
 docker exec -it "$(docker ps --filter "name=^mysql_mysql" -q)" mysql -u root -p"$senha_mysql" -e "
 CREATE DATABASE krayin${1:+_$1} CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-CREATE USER 'orion'@'%' IDENTIFIED BY 'design';
-GRANT ALL PRIVILEGES ON krayin${1:+_$1}.* TO 'orion'@'%';
+CREATE USER 'lpcoutinho'@'%' IDENTIFIED BY 'lpcoutinho';
+GRANT ALL PRIVILEGES ON krayin${1:+_$1}.* TO 'lpcoutinho'@'%';
 FLUSH PRIVILEGES;" > /dev/null 2>&1
 
 ## Mensagem de Passo
@@ -25582,7 +25581,7 @@ cat > krayincrm${1:+_$1}.yaml <<EOL
 version: "3.7"
 services:
 
-  ## --------------------------- ORION --------------------------- ##
+  
 
   krayin${1:+_$1}:
     image: webkul/krayin:2.0.1
@@ -25608,8 +25607,8 @@ services:
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_DATABASE=krayin${1:+_$1}
-      - DB_USERNAME=orion
-      - DB_PASSWORD=design
+      - DB_USERNAME=lpcoutinho
+      - DB_PASSWORD=lpcoutinho
       - DB_PREFIX=
 
       ## Configurações de e-mail
@@ -25620,7 +25619,7 @@ services:
       - MAIL_HOST=$smtp_email_krayincrm ## mude
       - MAIL_PORT=$porta_smtp_krayincrm ## mude
       - MAIL_ENCRYPTION=$smtp_secure_krayincrm
-      - MAIL_FROM_NAME="OrionCRM" ## mude
+      - MAIL_FROM_NAME="LpCoutinhoCRM" ## mude
 
       ## Configurações de Cache e Sessão
       - CACHE_DRIVER=file
@@ -25650,7 +25649,7 @@ services:
         - traefik.http.routers.krayin${1:+_$1}.entrypoints=websecure
         - traefik.http.routers.krayin${1:+_$1}.tls=true
 
-## --------------------------- ORION --------------------------- ##
+
 
 volumes:
   krayin${1:+_$1}_data:
@@ -25724,7 +25723,7 @@ mv AppServiceProvider.php /var/lib/docker/volumes/krayin${1:+_$1}_data/_data/app
 
 docker exec -it "$(docker ps --filter "name=krayincrm${1:+_$1}_krayin" -q)" php /var/www/html/laravel-crm/artisan migrate --force > /dev/null 2>&1
 
-docker exec -it   -e APP_NAME="Krayin CRM"   -e APP_URL="https://$url_krayincrm"   -e APP_TIMEZONE="America/Sao_Paulo"   -e APP_LOCALE="en"   -e APP_CURRENCY="BRL"   -e DB_CONNECTION="mysql"   -e DB_HOST="mysql"   -e DB_PORT="3306"   -e DB_DATABASE="krayin${1:+_$1}"   -e DB_USERNAME="orion"   -e DB_PASSWORD="design"   "$(docker ps --filter "name=krayincrm${1:+_$1}_krayin" -q)"   php /var/www/html/laravel-crm/artisan krayin-crm:install --no-interaction > /dev/null 2>&1
+docker exec -it   -e APP_NAME="Krayin CRM"   -e APP_URL="https://$url_krayincrm"   -e APP_TIMEZONE="America/Sao_Paulo"   -e APP_LOCALE="en"   -e APP_CURRENCY="BRL"   -e DB_CONNECTION="mysql"   -e DB_HOST="mysql"   -e DB_PORT="3306"   -e DB_DATABASE="krayin${1:+_$1}"   -e DB_USERNAME="lpcoutinho"   -e DB_PASSWORD="design"   "$(docker ps --filter "name=krayincrm${1:+_$1}_krayin" -q)"   php /var/www/html/laravel-crm/artisan krayin-crm:install --no-interaction > /dev/null 2>&1
 
 docker exec -it "$(docker ps --filter 'name=krayincrm_krayin' -q)" php /var/www/html/laravel-crm/artisan migrate --seed --force > /dev/null 2>&1
 
@@ -25901,28 +25900,28 @@ chatwoot.mail() {
     fi
     
     # Baixa os novos arquivos
-    wget -O confirmation_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
+    wget -O confirmation_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "5/9 - [ OK ]"
     else
         echo "5/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O password_change.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
+    wget -O password_change.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "6/9 - [ OK ]"
     else
         echo "6/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O reset_password_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
+    wget -O reset_password_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "7/9 - [ OK ]"
     else
         echo "7/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O unlock_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
+    wget -O unlock_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "8/9 - [ OK ]"
     else
@@ -25992,28 +25991,28 @@ chatwoot.n.mail() {
     fi
     
     # Baixa os novos arquivos
-    wget -O confirmation_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
+    wget -O confirmation_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "5/9 - [ OK ]"
     else
         echo "5/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O password_change.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
+    wget -O password_change.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "6/9 - [ OK ]"
     else
         echo "6/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O reset_password_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
+    wget -O reset_password_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "7/9 - [ OK ]"
     else
         echo "7/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O unlock_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
+    wget -O unlock_instructions.html.erb https://github.com/lpcoutinho/SetupLpCoutinho/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "8/9 - [ OK ]"
     else
@@ -26257,8 +26256,8 @@ krayin.fix(){
 
 docker exec -it "$(docker ps --filter "name=^mysql_mysql" -q)" mysql -u root -p"$senha_mysql" -e "
 CREATE DATABASE $DB_VAR CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-CREATE USER 'orion'@'%' IDENTIFIED BY 'design';
-GRANT ALL PRIVILEGES ON $DB_VAR.* TO 'orion'@'%';
+CREATE USER 'lpcoutinho'@'%' IDENTIFIED BY 'lpcoutinho';
+GRANT ALL PRIVILEGES ON $DB_VAR.* TO 'lpcoutinho'@'%';
 FLUSH PRIVILEGES;" > /dev/null 2>&1
 
 
@@ -26269,7 +26268,7 @@ FLUSH PRIVILEGES;" > /dev/null 2>&1
       echo "2/4 - [ OFF ] - Migrando DB"
   fi
 
-  docker exec -it   -e APP_NAME="Krayin CRM"   -e APP_URL="https://$URL_VAR"   -e APP_TIMEZONE="America/Sao_Paulo"   -e APP_LOCALE="en"   -e APP_CURRENCY="BRL"   -e DB_CONNECTION="mysql"   -e DB_HOST="mysql"   -e DB_PORT="3306"   -e DB_DATABASE="$DB_VAR"   -e DB_USERNAME="orion"   -e DB_PASSWORD="design"   "$(docker ps --filter "name=krayincrm${1:+_$1}_krayin" -q)"   php /var/www/html/laravel-crm/artisan krayin-crm:install --no-interaction > /dev/null 2>&1
+  docker exec -it   -e APP_NAME="Krayin CRM"   -e APP_URL="https://$URL_VAR"   -e APP_TIMEZONE="America/Sao_Paulo"   -e APP_LOCALE="en"   -e APP_CURRENCY="BRL"   -e DB_CONNECTION="mysql"   -e DB_HOST="mysql"   -e DB_PORT="3306"   -e DB_DATABASE="$DB_VAR"   -e DB_USERNAME="lpcoutinho"   -e DB_PASSWORD="design"   "$(docker ps --filter "name=krayincrm${1:+_$1}_krayin" -q)"   php /var/www/html/laravel-crm/artisan krayin-crm:install --no-interaction > /dev/null 2>&1
   if [ $? -eq 0 ]; then
       echo "3/4 - [ OK ] - Aplicando Seed"
   else
@@ -26294,7 +26293,7 @@ FLUSH PRIVILEGES;" > /dev/null 2>&1
 }
 
 krayin.br(){
-  wget -O /var/lib/docker/volumes/krayin_data/_data/packages/Webkul/Admin/src/Resources/lang/es/app.php https://raw.githubusercontent.com/oriondesign2015/SetupOrion/refs/heads/main/Extras/Krayin/app.php > /dev/null 2>&1
+  wget -O /var/lib/docker/volumes/krayin_data/_data/packages/Webkul/Admin/src/Resources/lang/es/app.php https://raw.githubusercontent.com/lpcoutinho2015/SetupLpCoutinho/refs/heads/main/Extras/Krayin/app.php > /dev/null 2>&1
   if [ $? -eq 0 ]; then
       echo "1/2 - [ OK ] - Traduzindo..."
   else
