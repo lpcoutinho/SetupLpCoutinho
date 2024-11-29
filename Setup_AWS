@@ -244,10 +244,10 @@ fi
 
 echo ""
 
-# Verifica se o arquivo SetupOrion já existe
-if [ -e "SetupOrion" ]; then
+# Verifica se o arquivo SetupLpCoutinho já existe
+if [ -e "SetupLpCoutinho" ]; then
     echo ""
-    rm SetupOrion
+    rm SetupLpCoutinho
 fi
 
 # Baixa o script
@@ -255,8 +255,8 @@ curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/Setu
 if [ $? -eq 0 ]; then
     echo "13/13 - [ OK ] - Baixando o script"
     # Executa o script baixado
-    chmod +x SetupOrion
-    ./SetupOrion
+    chmod +x SetupLpCoutinho
+    ./SetupLpCoutinho
 else
     echo "13/13 - [ OFF ] - Baixando o script"
     echo "Encerrando o setup"
@@ -270,4 +270,4 @@ sudo apt update
 sudo apt upgrade -y
 
 clear
-rm SetupOrion
+rm SetupLpCoutinho
