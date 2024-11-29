@@ -27,6 +27,12 @@
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/Setup)
 ```
+
+<p>Para instalar em Ubuntu 24:</p>
+```
+bash <(curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/Setup_U24)
+```
+
 <p>Após isso basta aguardar alguns instantes enquanto o script é iniciado e por fim, instalar as ferramentas que desejar.</p>
 <h1></h1>
 <p></p>
