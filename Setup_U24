@@ -251,7 +251,7 @@ if [ -e "SetupLpCoutinho" ]; then
 fi
 
 # Baixa o script
-curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/Setup_AWS -o SetupLpCoutinho
+curl -sSL https://raw.githubusercontent.com/lpcoutinho/SetupLpCoutinho/main/SetupLpCoutinho -o SetupLpCoutinho
 if [ $? -eq 0 ]; then
     echo "13/13 - [ OK ] - Baixando o script"
     # Executa o script baixado
